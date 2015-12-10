@@ -1,13 +1,12 @@
+import ui.GameScreen;
+import ui.GameWindow;
 
 public class Main {
 
-	public Main() {
-		// TODO Auto-generated constructor stub
-		System.out.println("gogo");
-	}
- /// fog
-	public void test(){
-		System.out.println("Test");
-
+	public static void main(String[] args) {
+		GameScreen gamescreen = new GameScreen();
+		GameWindow frame = new GameWindow(gamescreen);
+		frame.setVisible(true);
+		//frame.pack();
 	}
 }
