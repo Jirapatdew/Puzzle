@@ -16,7 +16,6 @@ import entity.Map;
 import entity.MovableBlock;
 import entity.Player;
 import entity.PointObject;
-import logic.GameLogic;
 import render.IRenderable;
 import render.RenderableHolder;
 import render.Resource;

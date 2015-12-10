@@ -5,7 +5,6 @@ import com.sun.glass.events.KeyEvent;
 import config.configs;
 import entity.Map;
 import entity.Player;
-import logic.GameLogic;
 import render.IRenderable;
 import render.RenderableHolder;
 import ui.GameScreen;

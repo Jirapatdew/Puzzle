@@ -6,7 +6,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import config.configs;
 import render.IRenderable;
-import utility.DrawingUtility;
 import utility.MapUtility;
 
 public class Map implements IRenderable{
