@@ -13,8 +13,8 @@ public class MapUtility {
 	public static int PLAYER=4;
 	public static int PASSABLE_TERRAIN=0;
 	public static int UNPASSABLE_TERRAIN=1;
-	public static int MOVABLE_BLOCK=2;
-	public static int DESTRUCTIBLE_BLOCK=3;
+	public static int MOVABLE_BLOCK=2;  //// hard
+	public static int DESTRUCTIBLE_BLOCK=3; ////white
 	public static int POINT=5;
 	public static int mapOffsetX=10;
 	public static int mapOffsetY=10;

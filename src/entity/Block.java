@@ -3,7 +3,6 @@ package entity;
 import java.awt.Graphics2D;
 
 public abstract class Block extends Entity{
-	
 	public Block(int x, int y) {
 		super(x, y);
 		// TODO Auto-generated constructor stub
@@ -12,19 +11,14 @@ public abstract class Block extends Entity{
 	@Override
 	public int getZ() {
 		// TODO Auto-generated method stub
-		return 0;
+		return Integer.MAX_VALUE;
 	}
 
-	@Override
-	public void draw(Graphics2D g2d) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public boolean isVisible() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 }

@@ -11,19 +11,25 @@ import javax.imageio.ImageIO;
 
 public class Resource {
 	
-	public static final Font standardFont  = new Font("Tahoma", Font.BOLD, 30);
-	public static BufferedImage appleSprite;
-	public static AudioClip coinSound;
-	static {
+	private static BufferedImage getImage(String directory){
+		/* fill code */
+		BufferedImage ret=null;
+		
 		try {
-			appleSprite = ImageIO.read(new File("src/res/Apple.png"));
-			coinSound =  Applet.newAudioClip(new File("src/res/coin.wav").toURI().toURL());
+			ClassLoader loader = Resource.class.getClassLoader();
+			ret = ImageIO.read(loader.getResource(directory));
 		} catch (Exception e) {
-			appleSprite = null;
-			coinSound = null;
+			// TODO Auto-generated catch block
+			System.out.println("Bug");
+			
+			e.printStackTrace();
+			return null;
 		}
+		return ret;
 	}
-	public Resource() {
-	}
+	public final static BufferedImage destructible_block=getImage("res/img/box.png");
+	public final static BufferedImage movable_block=getImage("res/img/box4.png");
+	public final static BufferedImage point_object=getImage("res/img/star2.png");
+	public final static BufferedImage player_img=getImage("res/img/player.png");
 	
 }
