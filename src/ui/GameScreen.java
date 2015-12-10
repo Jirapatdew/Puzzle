@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JPanel;
 
@@ -14,6 +16,7 @@ import entity.Map;
 import entity.MovableBlock;
 import entity.Player;
 import entity.PointObject;
+import logic.GameLogic;
 import render.IRenderable;
 import render.RenderableHolder;
 import render.Resource;
@@ -25,6 +28,9 @@ public class GameScreen extends JPanel{
 	 */
 	private static final long serialVersionUID = -8593735507163883962L;
 	private Map currentMap;
+	public int[][] getMapArray(){
+		return currentMap.mapArray;
+	}
 	public GameScreen(int mapNumber){
 		super();
 		currentMap = new Map(mapNumber,configs.cblack,configs.cpink);
@@ -69,6 +75,27 @@ public class GameScreen extends JPanel{
 		this.add(TitlePanel, BorderLayout.NORTH);
 		//this.add(CenterPanel, BorderLayout.CENTER);
 		this.add(LevelPanel, BorderLayout.SOUTH);
+		this.addKeyListener(new KeyListener(){
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
 		this.setVisible(true);
 	}
 	
@@ -95,7 +122,6 @@ public class GameScreen extends JPanel{
 		Graphics2D g2d = (Graphics2D)g;
 		
 		g2d.setBackground(Color.white);
-		//g2d.clearRect(0, 0, configs.screenWidth, configs.screedHeight);
 		g2d.setColor(configs.cblack);
 		
 		g2d.fillRect(0, configs.otherPanelHeight, configs.screenWidth, configs.mapHeight);
@@ -103,7 +129,6 @@ public class GameScreen extends JPanel{
 		
 		System.out.println(RenderableHolder.getInstance().getRenderableList().size());
 		
-		//g2d.drawImage(Resource.destructible_block,0,0,configs.screenWidth,configs.screedHeight,null);
 		
 		for(IRenderable obj : RenderableHolder.getInstance().getRenderableList()){
 			if(obj.isVisible()){

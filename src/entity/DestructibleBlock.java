@@ -8,9 +8,11 @@ import render.Resource;
 
 public class DestructibleBlock extends Block{
 
+	public boolean isDestroyed;
 	public DestructibleBlock(int x, int y) {
 		super(x, y);
 		// TODO Auto-generated constructor stub
+		this.isDestroyed=false;
 	}
 
 	@Override

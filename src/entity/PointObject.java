@@ -7,6 +7,7 @@ import render.Resource;
 
 public class PointObject extends Entity{
 
+	public boolean isDestroyed;
 	public PointObject(int x, int y) {
 		super(x, y);
 		// TODO Auto-generated constructor stub

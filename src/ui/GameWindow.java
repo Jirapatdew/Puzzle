@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 
 public class GameWindow extends JFrame {
 	
-	private JPanel currentScene;
+	public JPanel currentScene;
 	
 	public GameWindow(JPanel scene){
 		super("My Maze Puzzle");

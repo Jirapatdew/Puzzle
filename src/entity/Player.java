@@ -7,6 +7,8 @@ import render.Resource;
 
 public class Player extends Entity implements Movable{
 
+	public boolean isMoving;
+	int lastx,lasty;
 	public Player(int x, int y) {
 		super(x, y);
 		// TODO Auto-generated constructor stub
@@ -42,6 +44,24 @@ public class Player extends Entity implements Movable{
 	void update() {
 		// TODO Auto-generated method stub
 		
+	}
+	public void calculateDestination(int direction,int[][] mapArray){
+		int[] dirx={-1,0,1,0};
+		int[] diry={0,1,0,-1};
+		
+		int dx=dirx[direction];
+		int dy=dirx[direction];
+		
+		lastx=super.x;
+		lasty=super.y;
+		
+		while(true){
+			if(mapArray[lastx+dx][lasty+dy]!=0){
+				break;
+			}
+			lastx+=dx;
+			lasty+=dy;
+		}
 	}
 
 }
