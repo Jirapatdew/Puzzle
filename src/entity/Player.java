@@ -8,10 +8,15 @@ import render.Resource;
 public class Player extends Entity implements Movable{
 
 	public boolean isMoving;
-	int lastx,lasty;
+	int lastX,lastY;
+	int exactX,exactY;
+	int speed;
 	public Player(int x, int y) {
 		super(x, y);
 		// TODO Auto-generated constructor stub
+		this.speed=configs.playerSpeed;
+		exactX=this.x*configs.singleWidth+configs.mapOffsetX;
+		exactY=this.y*configs.singleHeight+configs.mapOffsetY;
 	}
 
 	@Override
@@ -23,9 +28,7 @@ public class Player extends Entity implements Movable{
 	@Override
 	public void draw(Graphics2D g2d) {
 		// TODO Auto-generated method stub
-		int startX=this.x*configs.singleWidth+configs.mapOffsetX;
-		int startY=this.y*configs.singleHeight+configs.mapOffsetY;
-		g2d.drawImage(Resource.player_img, startX,startY,configs.singleWidth,configs.singleHeight,null);
+		g2d.drawImage(Resource.player_img, exactX,exactY,configs.singleWidth,configs.singleHeight,null);
 	}
 
 	@Override
@@ -43,6 +46,11 @@ public class Player extends Entity implements Movable{
 	@Override
 	void update() {
 		// TODO Auto-generated method stub
+		if(lastX==x&&lastY==y){
+			isMoving=false;
+		}
+		if(!isMoving) return;
+		
 		
 	}
 	public void calculateDestination(int direction,int[][] mapArray){
@@ -52,16 +60,17 @@ public class Player extends Entity implements Movable{
 		int dx=dirx[direction];
 		int dy=dirx[direction];
 		
-		lastx=super.x;
-		lasty=super.y;
-		
+		lastX=super.x;
+		lastY=super.y;
 		while(true){
-			if(mapArray[lastx+dx][lasty+dy]!=0){
+			if(mapArray[lastX+dx][lastY+dy]!=0){
 				break;
 			}
-			lastx+=dx;
-			lasty+=dy;
+			lastX+=dx;
+			lastY+=dy;
 		}
+		this.isMoving=true;
+		
 	}
 
 }
