@@ -7,12 +7,21 @@ public class configs {
 	public static int mapGridHeight=14;
 	public static int singleWidth=40;
 	public static int singleHeight=40;
+	
 	public static int screenWidth=640;
 	public static int screedHeight=800;
+	
 	public static int mapWidth=mapGridWidth*singleWidth;
 	public static int mapHeight=mapGridHeight*singleHeight;
+	
 	public static int otherPanelWidth=640;
 	public static int otherPanelHeight=120;
+	
+	public static int sideWidth=(configs.screenWidth-configs.mapWidth)/2;
+	public static int sideHeight=(configs.screedHeight-configs.mapHeight)/2;
+	
+	public static int mapOffsetX=sideWidth;
+	public static int mapOffsetY=otherPanelHeight;
 	
 	
 	public static Color cblack=new Color(59,64,67);
