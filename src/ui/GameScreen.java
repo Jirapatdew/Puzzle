@@ -9,16 +9,26 @@ import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 import config.configs;
+import entity.DestructibleBlock;
 import entity.Map;
+import entity.MovableBlock;
+import entity.Player;
+import entity.PointObject;
+import render.IRenderable;
+import render.RenderableHolder;
+import utility.MapUtility;
 
 public class GameScreen extends JPanel{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -8593735507163883962L;
-	private Map currentMap=new Map(1,configs.cblack,configs.cpink);
-	public GameScreen(){
+	private Map currentMap;
+	RenderableHolder entities= new RenderableHolder();
+	public GameScreen(int mapNumber){
 		super();
+		currentMap = new Map(mapNumber,configs.cblack,configs.cpink);
+		addAllEntitiesInMap();
 		this.setLayout(new BorderLayout());
 		this.setPreferredSize(new Dimension(configs.screenWidth,configs.screedHeight));
 		this.setBackground(configs.cblack);
@@ -62,6 +72,22 @@ public class GameScreen extends JPanel{
 		this.setVisible(true);
 	}
 	
+	private void addAllEntitiesInMap() {
+		// TODO Auto-generated method stub
+		for(int i=2;i<currentMap.mapArray.length-2;i++){
+			for(int j=2;j<currentMap.mapArray[i].length-2;j++){
+				int cur = currentMap.mapArray[i][j];
+				if(cur==MapUtility.DESTRUCTIBLE_BLOCK) entities.add(new DestructibleBlock(i-2, j-2));
+				else if(cur==MapUtility.MOVABLE_BLOCK) entities.add(new MovableBlock(i-2, j-2));
+				else if(cur==MapUtility.POINT) entities.add(new PointObject(i-2, j-2));
+				else if(cur==MapUtility.PLAYER){
+					entities.add(new Player(i-2, j-2));
+				}
+				
+			}
+		}
+	}
+
 	@Override
 	protected void paintComponent(Graphics g) {
 		// TODO Auto-generated method stub
@@ -74,6 +100,10 @@ public class GameScreen extends JPanel{
 		g2d.fillRect(0, configs.otherPanelHeight, configs.screenWidth, configs.mapHeight);
 		if(currentMap.isVisible()) currentMap.draw(g2d);
 		//System.out.println(111);
+		System.out.println(entities.getInstance().getRenderableList().size());
+		for(IRenderable obj : RenderableHolder.getInstance().getRenderableList()){
+			if(obj.isVisible()) obj.draw(g2d);
+		}
 		
 	}
 	

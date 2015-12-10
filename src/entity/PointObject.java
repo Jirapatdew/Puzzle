@@ -2,9 +2,9 @@ package entity;
 
 import java.awt.Graphics2D;
 
-public class Point extends Entity{
+public class PointObject extends Entity{
 
-	public Point(int x, int y) {
+	public PointObject(int x, int y) {
 		super(x, y);
 		// TODO Auto-generated constructor stub
 	}
@@ -25,6 +25,12 @@ public class Point extends Entity{
 	public boolean isVisible() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	void update() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

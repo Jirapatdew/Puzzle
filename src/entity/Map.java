@@ -6,16 +6,19 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import config.configs;
 import render.IRenderable;
+import utility.DrawingUtility;
+import utility.MapUtility;
 
 public class Map implements IRenderable{
 
-	int[][] mapArray = null;
+	public int[][] mapArray = null;
 	int singleWidth,singleHeight;
 	Color backgroundColor;
 	Color foregoundColor;
 	CopyOnWriteArrayList<Entity> entities = new CopyOnWriteArrayList<Entity>();
-	public Map(int[][] mapArray,Color bg,Color fg){
-		this.mapArray=mapArray;
+	public Map(int mapNumber,Color bg,Color fg){
+		String mapDirectory="res/map/map"+mapNumber+".txt";
+		this.mapArray=MapUtility.readMap(mapDirectory);
 		this.entities= new CopyOnWriteArrayList<Entity>();
 		this.backgroundColor=bg;
 		this.foregoundColor=fg;
@@ -34,11 +37,16 @@ public class Map implements IRenderable{
 	@Override
 	public void draw(Graphics2D g2d) {
 		// TODO Auto-generated method stub
-		for(int i=0;i<mapArray.length;i++){
-			for(int j=0;j<mapArray[i].length;j++){
-				if(mapArray[i][j]==0) g2d.setColor(backgroundColor);
+		//System.out.println(222);
+		for(int i=2;i<mapArray.length-2;i++){
+			for(int j=2;j<mapArray[i].length-2;j++){
+				if(mapArray[i][j]==MapUtility.UNPASSABLE_TERRAIN) g2d.setColor(backgroundColor);
 				else g2d.setColor(foregoundColor);
-				g2d.fillRect(singleWidth*10, singleHeight*10, singleWidth, singleHeight);
+				
+				int startY=singleHeight*(i-2)+configs.mapOffsetY;
+				int startX=singleHeight*(j-2)+configs.mapOffsetX;
+				g2d.fillRect(startX, startY, singleWidth, singleHeight);
+				//System.out.println(startX+" "+startY+" "+mapArray[i][j]);
 			}
 		}
 	}
