@@ -15,6 +15,9 @@ public class MapUtility {
 	public static int UNPASSABLE_TERRAIN=1;
 	public static int MOVABLE_BLOCK=2;
 	public static int DESTRUCTIBLE_BLOCK=3;
+	public static int POINT=5;
+	public static int mapOffsetX=10;
+	public static int mapOffsetY=10;
 	public static int[][] readMap(String file) {
 		int[][] mapArray=new int[configs.mapGridHeight+4][configs.mapGridWidth+4];
 		Scanner s=null;
@@ -36,11 +39,12 @@ public class MapUtility {
 		return mapArray;
 	}
 	public static void main(String[] args) throws FileNotFoundException{
-		int[][] mapArray = readMap("res/map1.txt");
+		int[][] mapArray = readMap("res/map/map1.txt");
 		for(int i=0;i<mapArray.length;i++){
 			for(int j=0;j<mapArray[i].length;j++){
 				System.out.print(mapArray[i][j]+" ");
 			}System.out.println();
 		}
 	}
+	///Just a Comment Passing by
 }
