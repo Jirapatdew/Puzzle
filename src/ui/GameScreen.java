@@ -10,6 +10,7 @@ import java.awt.event.KeyListener;
 
 import javax.swing.JPanel;
 
+import config.PlayerStatus;
 import config.configs;
 import entity.DestructibleBlock;
 import entity.Map;
@@ -32,9 +33,9 @@ public class GameScreen extends JPanel{
 		if(currentMap.mapArray==null) System.out.println("mapnull");
 		return currentMap.mapArray;
 	}
-	public GameScreen(int mapNumber){
+	public GameScreen(){
 		super();
-		this.currentMap = new Map(mapNumber,configs.cblack,configs.cpink);
+		this.currentMap = new Map(PlayerStatus.level,configs.cblack,configs.cpink);
 		//MapUtility.printMap(currentMap.mapArray);
 		addAllEntitiesInMap();
 		this.setLayout(new BorderLayout());
@@ -45,10 +46,10 @@ public class GameScreen extends JPanel{
 		setFocusable(true);
 		requestFocus();
 		///////// Title Panel
-		JPanel TitlePanel=new JPanel();
-		TitlePanel.setBackground(configs.cblack);
-		TitlePanel.setPreferredSize(new Dimension(configs.otherPanelWidth,configs.otherPanelHeight));
-		
+//		JPanel TitlePanel=new JPanel();
+//		TitlePanel.setBackground(configs.cblack);
+//		TitlePanel.setPreferredSize(new Dimension(configs.otherPanelWidth,configs.otherPanelHeight));
+		StatusPanel TitlePanel = new StatusPanel();
 		
 		///////// Center Panel ()
 		JPanel MapEastPanel = new JPanel();
@@ -69,14 +70,14 @@ public class GameScreen extends JPanel{
 		CenterPanel.add(MapEastPanel,BorderLayout.EAST);
 		
 		///////// Level Panel
-		JPanel LevelPanel=new JPanel();
-		LevelPanel.setBackground(configs.cblack);
-		LevelPanel.setPreferredSize(new Dimension(configs.otherPanelWidth,configs.otherPanelHeight));
-		
+//		JPanel levelPanel=new JPanel();
+//		levelPanel.setBackground(configs.cblack);
+//		levelPanel.setPreferredSize(new Dimension(configs.otherPanelWidth,configs.otherPanelHeight));
+		LevelPanel levelPanel = new LevelPanel();
 		
 		this.add(TitlePanel, BorderLayout.NORTH);
 		//this.add(CenterPanel, BorderLayout.CENTER);
-		this.add(LevelPanel, BorderLayout.SOUTH);
+		this.add(levelPanel, BorderLayout.SOUTH);
 		this.addKeyListener(new KeyListener(){
 
 			@Override

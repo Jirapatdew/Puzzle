@@ -7,20 +7,20 @@ public class GameWindow extends JFrame {
 	
 	public JPanel currentScene;
 	
-	public GameWindow(JPanel scene){
-		super("My Maze Puzzle");
+	public GameWindow() {
+		super("My Puzzle");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
-		this.currentScene = scene;
+		currentScene = new MainScreen();
 		getContentPane().add(currentScene);
 		pack();
 		setVisible(true);
 		currentScene.requestFocus();
 	}
 	
-	public void switchScene(JPanel scene){
+	public void switchScreen(JPanel screen){
 		getContentPane().remove(currentScene);
-		this.currentScene = scene;
+		this.currentScene = screen;
 		getContentPane().add(currentScene);
 		getContentPane().validate();
 		pack();

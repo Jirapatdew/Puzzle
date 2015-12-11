@@ -2,6 +2,8 @@ package config;
 
 import java.awt.Color;
 
+import render.Resource;
+
 public class configs {
 	public static int mapGridWidth=12;
 	public static int mapGridHeight=14;
@@ -24,8 +26,8 @@ public class configs {
 	public static int mapOffsetY=otherPanelHeight;
 	
 	
-	public static Color cblack=new Color(59,64,67);
-	public static Color cpink=new Color(251,97,105);
+	public static Color cblack = Resource.iBlack;
+	public static Color cpink = Resource.iPink;
 	
 	
 	public static int PLAYER=4;

@@ -1,35 +1,58 @@
 package render;
 
-import java.applet.Applet;
-import java.applet.AudioClip;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.image.BufferedImage;
-import java.io.File;
 
 import javax.imageio.ImageIO;
 
 
+
 public class Resource {
 	
+	public static final Font largeFont = new Font("Century Gothic", Font.PLAIN, 80);
+	public static final Font mediumFont = new Font("Century Gothic", Font.PLAIN, 36);
+	public static final Font standardFont = new Font("Century Gothic", Font.PLAIN, 30);
+	public static final Color iBlack = new Color(59, 64, 67);
+	public static final Color iYellow = new Color(243, 156, 18);
+	public static final Color iGreen = new Color(26, 188, 156);
+	public static final Color iPink = new Color(251,97,105);
+	
 	private static BufferedImage getImage(String directory){
-		/* fill code */
-		BufferedImage ret=null;
-		
 		try {
 			ClassLoader loader = Resource.class.getClassLoader();
-			ret = ImageIO.read(loader.getResource(directory));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println("Bug");
-			
-			e.printStackTrace();
-			return null;
+			return ImageIO.read(loader.getResource(directory));
+		} catch(Exception e) {
+			return  null;
 		}
-		return ret;
 	}
+	
 	public final static BufferedImage destructible_block=getImage("res/img/box.png");
 	public final static BufferedImage movable_block=getImage("res/img/box2.png");
 	public final static BufferedImage point_object=getImage("res/img/star.png");
 	public final static BufferedImage player_img=getImage("res/img/player.png");
+	
+	public static final BufferedImage player = getImage("res/img/player.png");
+	public static final BufferedImage star = getImage("res/img/star.png");
+	public static final BufferedImage star2 = getImage("res/img/star2.png");
+	public static final BufferedImage box = getImage("res/img/box.png");
+	public static final BufferedImage box2 = getImage("res/img/box2.png");
+	
+	public static final BufferedImage gold = getImage("res/img/trophies/gold.png");
+	public static final BufferedImage silver = getImage("res/img/trophies/silver.png");
+	public static final BufferedImage bronze = getImage("res/img/trophies/bronze.png");
+	
+	public static final BufferedImage mainScreen = getImage("res/img/MainScreen.png");
+	public static final BufferedImage mainScreen2 = getImage("res/img/MainScreen2.png");
+	
+	public static final BufferedImage playButton = getImage("res/img/button/play.png");
+	public static final BufferedImage statButton = getImage("res/img/button/stat.png");
+	public static final BufferedImage soundButton = getImage("res/img/button/sound.png");
+	public static final BufferedImage muteSoundButton = getImage("res/img/button/mute_sound.png");
+	public static final BufferedImage controlButton = getImage("res/img/button/game_control.png");
+	public static final BufferedImage infoButton = getImage("res/img/button/info.png");
+	public static final BufferedImage backButton = getImage("res/img/button/back2.png");
+	public static final BufferedImage menuButton = getImage("res/img/button/menu.png");
+	public static final BufferedImage refreshButton = getImage("res/img/button/refresh.png");
 	
 }

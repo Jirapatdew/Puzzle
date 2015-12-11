@@ -1,3 +1,4 @@
+package main;
 import javax.swing.JFrame;
 
 import com.sun.glass.events.KeyEvent;
@@ -18,22 +19,22 @@ import utility.MapUtility;
 
 
 public class Main {
-	public static GameWindow frame;
+	public static GameWindow gameWindow;
 	public static GameScreen gamescreen;
 	public static void main(String[] args) throws InterruptedException {
 		int mapNumber=1;
-		GameScreen gamescreen = new GameScreen(1);
-		MainScreen mainscreen = new MainScreen();
-		InstructionScreen instructionscreen = new InstructionScreen();
-		StatScreen statscreen = new StatScreen();
-		frame = new GameWindow(gamescreen);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
-		frame.pack();
+//		GameScreen gamescreen = new GameScreen(1);
+//		MainScreen mainscreen = new MainScreen();
+//		InstructionScreen instructionscreen = new InstructionScreen();
+//		StatScreen statscreen = new StatScreen();
+		gameWindow = new GameWindow();
+		gameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		gameWindow.setVisible(true);
+		gameWindow.pack();
 		while(true){
 			Thread.sleep(20);
 			logicUpdate();
-			frame.repaint();
+			gameWindow.repaint();
 			
 		}
 	}
@@ -48,7 +49,7 @@ public class Main {
 				break;
 			}
 		}
-		if(!(frame.currentScene instanceof GameScreen)){
+		if(!(gameWindow.currentScene instanceof GameScreen)){
 			return;
 		}
 		//// calculate player final point
