@@ -15,10 +15,12 @@ public class DestructibleBlock extends Block{
 		this.isDestroyed=false;
 	}
 
-	@Override
-	void update() {
+	public boolean update(boolean isMoving) {
 		// TODO Auto-generated method stub
-		return;
+		if(isMoving) return false;
+		else{
+			return isDestroyed;
+		}
 	}
 
 	@Override
@@ -32,5 +34,11 @@ public class DestructibleBlock extends Block{
 		//g2d.drawImage(Resource.destructible_block, null, startX, startY);
 		//System.out.println(startX+" "+startY);
 		//System.out.println(x+" "+y);
+	}
+
+	@Override
+	void update() {
+		// TODO Auto-generated method stub
+		return;
 	}
 }
