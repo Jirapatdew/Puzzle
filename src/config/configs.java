@@ -17,7 +17,7 @@ public class configs {
 	public static int mapHeight=mapGridHeight*singleHeight;
 	
 	public static int otherPanelWidth=640;
-	public static int otherPanelHeight=120;
+	public static int otherPanelHeight=160;
 	
 	public static int sideWidth=(configs.screenWidth-configs.mapWidth)/2;
 	public static int sideHeight=(configs.screedHeight-configs.mapHeight)/2;
