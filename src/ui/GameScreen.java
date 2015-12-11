@@ -19,6 +19,7 @@ import entity.PointObject;
 import render.IRenderable;
 import render.RenderableHolder;
 import render.Resource;
+import utility.InputUtility;
 import utility.MapUtility;
 
 public class GameScreen extends JPanel{
@@ -79,13 +80,14 @@ public class GameScreen extends JPanel{
 			@Override
 			public void keyPressed(KeyEvent e) {
 				// TODO Auto-generated method stub
-				
+				InputUtility.setKeyPressed(e.getKeyCode(), true);
+				InputUtility.setKeyTriggered(e.getKeyCode(), true);
 			}
 
 			@Override
 			public void keyReleased(KeyEvent e) {
 				// TODO Auto-generated method stub
-				
+				InputUtility.setKeyPressed(e.getKeyCode(), false);
 			}
 
 			@Override
@@ -126,7 +128,7 @@ public class GameScreen extends JPanel{
 		g2d.fillRect(0, configs.otherPanelHeight, configs.screenWidth, configs.mapHeight);
 		if(currentMap.isVisible()) currentMap.draw(g2d);
 		
-		System.out.println(RenderableHolder.getInstance().getRenderableList().size());
+		//System.out.println(RenderableHolder.getInstance().getRenderableList().size());
 		
 		
 		for(IRenderable obj : RenderableHolder.getInstance().getRenderableList()){
