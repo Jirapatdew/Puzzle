@@ -82,15 +82,15 @@ public class Player extends Entity implements Movable{
 		int nextTerrain=mapArray[lastY+dy+2][lastX+dx+2];
 		System.out.println(nextTerrain);
 		if(nextTerrain==MapUtility.MOVABLE_BLOCK){
-			if(mapArray[lastY+dy+dy+2][lastX+dx+dx+2]==MapUtility.PASSABLE_TERRAIN){
+			int nextNextTerrain=mapArray[lastY+dy+dy+2][lastX+dx+dx+2];
+			if(nextNextTerrain==MapUtility.PASSABLE_TERRAIN){
 				lastX+=dx;
 				lastY+=dy;
 				Main.gamescreen.currentMap.mapArray[super.y+2][super.x+2]=MapUtility.PASSABLE_TERRAIN;
 				super.x=lastX;
 				super.y=lastY;
-				Main.gamescreen.currentMap.mapArray[super.y+2][super.x+2]=MapUtility.PLAYER;
 				Main.moveBlock(lastX,lastY,lastX+dx,lastY+dy);
-				if(lastX!=x||lastY!=y)this.isMoving=true;
+				isMoving=true;
 				lastX=lastX*configs.singleWidth+configs.mapOffsetX;
 				lastY=lastY*configs.singleHeight+configs.mapOffsetY;
 				return;

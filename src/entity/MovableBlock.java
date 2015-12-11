@@ -43,10 +43,13 @@ public class MovableBlock extends Block implements Movable{
 		move();
 	}
 	public void setNewPlace(int finalX,int finalY){
-		super.x=lastX;
-		super.y=lastY;
+		super.x=finalX;
+		super.y=finalY;
 		lastX=finalX*configs.singleWidth+configs.mapOffsetX;
 		lastY=finalY*configs.singleHeight+configs.mapOffsetY;
+		isMoving=true;
+		System.out.println(exactX+" "+exactY);
+		System.out.println(lastX+" "+lastY);
 	}
 	@Override
 	public void draw(Graphics2D g2d) {

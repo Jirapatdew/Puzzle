@@ -139,8 +139,9 @@ public class GameScreen extends JPanel{
 			if(obj.isVisible()){
 				obj.draw(g2d);
 				if(obj instanceof MovableBlock){
-					MovableBlock mvb= (MovableBlock)obj; 
-					System.out.println(mvb.exactX+" "+mvb.exactY);
+					MovableBlock mvb = (MovableBlock)obj;
+					//System.out.println(mvb.exactX+" "+mvb.exactY);
+					//System.out.println(mvb.lastX+" "+mvb.lastY);
 				}
 			}
 		}
