@@ -28,8 +28,8 @@ public class Resource {
 		return ret;
 	}
 	public final static BufferedImage destructible_block=getImage("res/img/box.png");
-	public final static BufferedImage movable_block=getImage("res/img/box4.png");
-	public final static BufferedImage point_object=getImage("res/img/star2.png");
+	public final static BufferedImage movable_block=getImage("res/img/box2.png");
+	public final static BufferedImage point_object=getImage("res/img/star.png");
 	public final static BufferedImage player_img=getImage("res/img/player.png");
 	
 }
