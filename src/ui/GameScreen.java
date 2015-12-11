@@ -36,6 +36,7 @@ public class GameScreen extends JPanel{
 	public GameScreen(){
 		super();
 		this.currentMap = new Map(PlayerStatus.level,configs.cblack,configs.cpink);
+		RenderableHolder.getInstance().getRenderableList().clear();
 		//MapUtility.printMap(currentMap.mapArray);
 		addAllEntitiesInMap();
 		this.setLayout(new BorderLayout());
@@ -137,6 +138,10 @@ public class GameScreen extends JPanel{
 		for(IRenderable obj : RenderableHolder.getInstance().getRenderableList()){
 			if(obj.isVisible()){
 				obj.draw(g2d);
+				if(obj instanceof MovableBlock){
+					MovableBlock mvb= (MovableBlock)obj; 
+					System.out.println(mvb.exactX+" "+mvb.exactY);
+				}
 			}
 		}
 		

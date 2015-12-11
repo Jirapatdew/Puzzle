@@ -3,8 +3,11 @@ import javax.swing.JFrame;
 
 import com.sun.glass.events.KeyEvent;
 
+import config.PlayerStatus;
 import config.configs;
+import entity.DestructibleBlock;
 import entity.Map;
+import entity.MovableBlock;
 import entity.Player;
 import render.IRenderable;
 import render.RenderableHolder;
@@ -21,6 +24,7 @@ import utility.MapUtility;
 public class Main {
 	public static GameWindow gameWindow;
 	public static GameScreen gamescreen;
+	public static PlayerStatus playerStatus;
 	public static void main(String[] args) throws InterruptedException {
 		int mapNumber=1;
 //		GameScreen gamescreen = new GameScreen(1);
@@ -39,6 +43,9 @@ public class Main {
 		}
 	}
 	public static void logicUpdate(){
+		if(!(gameWindow.currentScene instanceof GameScreen)){
+			return;
+		}
 		Player player =null;
 		
 		//// find player and delete in from renderable holder
@@ -49,9 +56,7 @@ public class Main {
 				break;
 			}
 		}
-		if(!(gameWindow.currentScene instanceof GameScreen)){
-			return;
-		}
+		
 		//// calculate player final point
 		if(InputUtility.getKeyTriggered(KeyEvent.VK_UP)){
 			player.calculateDestination(configs.NORTH,gamescreen.getMapArray());
@@ -65,11 +70,40 @@ public class Main {
 		else if(InputUtility.getKeyTriggered(KeyEvent.VK_RIGHT)){
 			player.calculateDestination(configs.EAST,gamescreen.getMapArray());
 		}
-		System.out.println(player.exactX+" "+player.exactY+" e");
-		System.out.println(player.lastX+" "+player.lastY+" l");
+		//System.out.println(player.exactX+" "+player.exactY+" e");
+		//System.out.println(player.lastX+" "+player.lastY+" l");
 		
+		player.update();
 		RenderableHolder.getInstance().getRenderableList().add(player);
 			
 		InputUtility.postUpdate();
+	}
+	public static void moveBlock(int currentX, int currentY,int lastX,int lastY) {
+		// TODO Auto-generated method stub
+		
+		for(IRenderable cur : RenderableHolder.getInstance().getRenderableList()){
+			if(cur instanceof MovableBlock){
+				MovableBlock mvb = (MovableBlock)cur;
+				if(mvb.x==currentX&&mvb.y==currentY){
+					RenderableHolder.getInstance().getRenderableList().remove(cur);
+					gamescreen.currentMap.mapArray[currentY+2][currentX+2]=MapUtility.PLAYER;
+					gamescreen.currentMap.mapArray[lastY+2][lastY+2]=MapUtility.MOVABLE_BLOCK;
+					mvb.setNewPlace(lastX,lastY);
+					RenderableHolder.getInstance().getRenderableList().add(mvb);
+				}
+			}
+		}
+	}
+	public static void destroyBlock(int currentX, int currentY) {
+		// TODO Auto-generated method stub
+		for(IRenderable cur : RenderableHolder.getInstance().getRenderableList()){
+			if(cur instanceof DestructibleBlock){
+				DestructibleBlock dtb = (DestructibleBlock)cur;
+				if(dtb.x==currentX&&dtb.y==currentY){
+					RenderableHolder.getInstance().getRenderableList().remove(cur);
+					gamescreen.currentMap.mapArray[currentY+2][currentX+2]=MapUtility.PASSABLE_TERRAIN;
+				}
+			}
+		}
 	}
 }

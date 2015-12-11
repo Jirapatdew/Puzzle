@@ -7,25 +7,50 @@ import render.Resource;
 
 public class MovableBlock extends Block implements Movable{
 
+	public int exactX,exactY;
+	public int lastX,lastY;
+	public boolean isMoving;
+	public int speed;
 	public MovableBlock(int x, int y) {
 		super(x, y);
 		// TODO Auto-generated constructor stub
+		exactX=this.x*configs.singleWidth+configs.mapOffsetX;
+		exactY=this.y*configs.singleHeight+configs.mapOffsetY;
+		lastX=exactX;
+		lastY=exactY;
+		isMoving=false;
+		speed=configs.playerSpeed;
 	}
-	int nextX,nextY;
+	
 	@Override
 	public void move() {
 		// TODO Auto-generated method stub
-		
+		int dif;
+		if(lastX!=exactX){
+			dif=lastX-exactX;
+			dif=dif/Math.abs(dif);
+			exactX+=dif*speed;
+		}
+		else if(lastY!=exactY){
+			dif=lastY-exactY;
+			dif=dif/Math.abs(dif);
+			exactY+=dif*speed;
+		}
 	}
 	public void update(){
-		super.x=this.nextX;
-		super.y=this.nextY;
+		if(exactX==lastX&&exactY==lastY) isMoving=false;
+		if(!isMoving) return;
+		move();
+	}
+	public void setNewPlace(int finalX,int finalY){
+		super.x=lastX;
+		super.y=lastY;
+		lastX=finalX*configs.singleWidth+configs.mapOffsetX;
+		lastY=finalY*configs.singleHeight+configs.mapOffsetY;
 	}
 	@Override
 	public void draw(Graphics2D g2d) {
 		// TODO Auto-generated method stub
-		int startX=this.x*configs.singleWidth+configs.mapOffsetX;
-		int startY=this.y*configs.singleHeight+configs.mapOffsetY;
-		g2d.drawImage(Resource.movable_block, startX,startY,configs.singleWidth,configs.singleHeight,null);
+		g2d.drawImage(Resource.movable_block, exactX,exactY,configs.singleWidth,configs.singleHeight,null);
 	}
 }
