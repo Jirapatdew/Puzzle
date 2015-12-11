@@ -27,13 +27,15 @@ public class GameScreen extends JPanel{
 	 * 
 	 */
 	private static final long serialVersionUID = -8593735507163883962L;
-	private Map currentMap;
-	public int[][] getMapArray(){
+	public static Map currentMap;
+	public static int[][] getMapArray(){
+		if(currentMap.mapArray==null) System.out.println("mapnull");
 		return currentMap.mapArray;
 	}
 	public GameScreen(int mapNumber){
 		super();
-		currentMap = new Map(mapNumber,configs.cblack,configs.cpink);
+		this.currentMap = new Map(mapNumber,configs.cblack,configs.cpink);
+		//MapUtility.printMap(currentMap.mapArray);
 		addAllEntitiesInMap();
 		this.setLayout(new BorderLayout());
 		this.setPreferredSize(new Dimension(configs.screenWidth,configs.screedHeight));

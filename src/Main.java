@@ -13,6 +13,7 @@ import ui.InstructionScreen;
 import ui.MainScreen;
 import ui.StatScreen;
 import utility.InputUtility;
+import utility.MapUtility;
 
 
 
@@ -53,19 +54,15 @@ public class Main {
 		//// calculate player final point
 		if(InputUtility.getKeyTriggered(KeyEvent.VK_UP)){
 			player.calculateDestination(configs.NORTH,gamescreen.getMapArray());
-			InputUtility.postUpdate();
 		}
 		else if(InputUtility.getKeyTriggered(KeyEvent.VK_DOWN)){
 			player.calculateDestination(configs.SOUTH,gamescreen.getMapArray());
-			InputUtility.postUpdate();
 		}
 		else if(InputUtility.getKeyTriggered(KeyEvent.VK_LEFT)){
 			player.calculateDestination(configs.WEST,gamescreen.getMapArray());
-			InputUtility.postUpdate();
 		}
 		else if(InputUtility.getKeyTriggered(KeyEvent.VK_RIGHT)){
 			player.calculateDestination(configs.EAST,gamescreen.getMapArray());
-			InputUtility.postUpdate();
 		}
 		
 		RenderableHolder.getInstance().getRenderableList().add(player);

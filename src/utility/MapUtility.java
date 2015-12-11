@@ -46,5 +46,12 @@ public class MapUtility {
 			}System.out.println();
 		}
 	}
+	public static void printMap(int[][] map){
+		for(int i=2;i<map.length-2;i++){
+			for(int j=2;j<map[i].length-2;j++){
+				System.out.print(map[i][j]+" ");
+			}System.out.println();
+		}
+	}
 	///Just a Comment Passing by
 }
