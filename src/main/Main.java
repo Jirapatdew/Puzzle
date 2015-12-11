@@ -78,6 +78,11 @@ public class Main {
 			if(obj instanceof MovableBlock){
 				((MovableBlock)obj).update();
 			}
+			else if(obj instanceof DestructibleBlock){
+				if(((DestructibleBlock)obj).update(player.isMoving)){
+					RenderableHolder.getInstance().getRenderableList().remove(obj);
+				}
+			}
 		}
 		RenderableHolder.getInstance().getRenderableList().add(player);
 			
@@ -106,7 +111,9 @@ public class Main {
 				DestructibleBlock dtb = (DestructibleBlock)cur;
 				if(dtb.x==currentX&&dtb.y==currentY){
 					RenderableHolder.getInstance().getRenderableList().remove(cur);
+					dtb.isDestroyed=true;
 					gamescreen.currentMap.mapArray[currentY+2][currentX+2]=MapUtility.PASSABLE_TERRAIN;
+					RenderableHolder.getInstance().getRenderableList().add(dtb);
 				}
 			}
 		}
