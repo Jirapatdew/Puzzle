@@ -4,12 +4,13 @@ import java.awt.Graphics2D;
 
 import config.configs;
 import render.Resource;
+import utility.MapUtility;
 
 public class Player extends Entity implements Movable{
 
 	public boolean isMoving;
-	int lastX,lastY;
-	int exactX,exactY;
+	public int lastX,lastY;
+	public int exactX,exactY;
 	int speed;
 	public Player(int x, int y) {
 		super(x, y);
@@ -17,6 +18,8 @@ public class Player extends Entity implements Movable{
 		this.speed=configs.playerSpeed;
 		exactX=this.x*configs.singleWidth+configs.mapOffsetX;
 		exactY=this.y*configs.singleHeight+configs.mapOffsetY;
+		lastX=exactX;
+		lastY=exactY;
 	}
 
 	@Override
@@ -40,37 +43,54 @@ public class Player extends Entity implements Movable{
 	@Override
 	public void move() {
 		// TODO Auto-generated method stub
-		
+		int dif;
+		if(lastX!=exactX){
+			dif=lastX-exactX;
+			dif=dif/Math.abs(dif);
+			exactX+=dif*speed;
+		}
+		else if(lastY!=exactY){
+			dif=lastY-exactY;
+			dif=dif/Math.abs(dif);
+			exactY+=dif*speed;
+		}
 	}
 
 	@Override
 	void update() {
 		// TODO Auto-generated method stub
-		if(lastX==x&&lastY==y){
+		if(lastX==exactX&&lastY==exactY){
 			isMoving=false;
 		}
 		if(!isMoving) return;
-		
+		move();
 		
 	}
 	public void calculateDestination(int direction,int[][] mapArray){
-		int[] dirx={-1,0,1,0};
-		int[] diry={0,1,0,-1};
-		
+		if(isMoving) return;
+		int[] diry={-1,0,1,0};
+		int[] dirx={0,1,0,-1};
+		System.out.println("cal"+direction);
+		MapUtility.printMap(mapArray);
 		int dx=dirx[direction];
-		int dy=dirx[direction];
+		int dy=diry[direction];
 		
 		lastX=super.x;
 		lastY=super.y;
+		System.out.println(lastX+" "+lastY);
+		System.out.println(dx+" "+dy);
 		while(true){
-			if(mapArray[lastX+dx][lastY+dy]!=0){
+			if(mapArray[lastY+dy][lastX+dx]!=0){
 				break;
 			}
+			System.out.println(lastX+" "+lastY);
+			System.out.println(dx+" "+dy);
 			lastX+=dx;
 			lastY+=dy;
 		}
-		this.isMoving=true;
-		
+		if(lastX!=x||lastY!=y)this.isMoving=true;
+		lastX=lastX*configs.singleWidth+configs.mapOffsetX;
+		lastY=lastY*configs.singleHeight+configs.mapOffsetY;
 	}
 
 }

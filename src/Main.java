@@ -64,6 +64,8 @@ public class Main {
 		else if(InputUtility.getKeyTriggered(KeyEvent.VK_RIGHT)){
 			player.calculateDestination(configs.EAST,gamescreen.getMapArray());
 		}
+		System.out.println(player.exactX+" "+player.exactY+" e");
+		System.out.println(player.lastX+" "+player.lastY+" l");
 		
 		RenderableHolder.getInstance().getRenderableList().add(player);
 			
