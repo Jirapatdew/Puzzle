@@ -3,6 +3,8 @@ package button;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
 import config.PlayerStatus;
 import main.Main;
 import render.Resource;
@@ -18,7 +20,14 @@ public class RefreshButton extends RoundButton {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				Main.gameWindow.switchScreen(new GameScreen());
+				if(PlayerStatus.heart > 1) {
+					PlayerStatus.heart--;
+					Main.gameWindow.switchScreen(new GameScreen());
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "GAME OVER");
+				}
+				
 			}
 		});
 	}

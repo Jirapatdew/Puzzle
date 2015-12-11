@@ -37,6 +37,7 @@ public class Resource {
 	public static final BufferedImage star2 = getImage("res/img/star2.png");
 	public static final BufferedImage box = getImage("res/img/box.png");
 	public static final BufferedImage box2 = getImage("res/img/box2.png");
+	public static final BufferedImage heart = getImage("res/img/heart.png");
 	
 	public static final BufferedImage gold = getImage("res/img/trophies/gold.png");
 	public static final BufferedImage silver = getImage("res/img/trophies/silver.png");
