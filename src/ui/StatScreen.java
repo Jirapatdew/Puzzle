@@ -29,18 +29,33 @@ public class StatScreen extends JPanel {
 		g2d.setColor(Resource.iBlack);
 		g2d.fillRect(0, 0, 640, 800);
 		
-		g2d.drawImage(Resource.gold, 120, 160, 45, 45, null);
-		g2d.drawImage(Resource.silver, 120, 230, 45, 45, null);
-		g2d.drawImage(Resource.bronze, 120, 300, 45, 45, null);
+		for(int i = 1; i <= 7; i++) {
+			g2d.drawImage(Resource.rank[i], 120, 150 + (70*(i-1)), 45, 45, null);
+		}
+		
+		g2d.setFont(Resource.mediumFont);
+		g2d.setColor(Color.WHITE);
+		g2d.drawString("--- High Score ---", 170, 100);
 		
 		g2d.setFont(Resource.standardFont);
 		g2d.setColor(Color.WHITE);
-		g2d.drawString("DewJi", 250, 190);
-		g2d.drawString("500", 440, 190);
-		g2d.drawString("Obama", 250, 260);
-		g2d.drawString("400", 440, 260);
-		g2d.drawString("John", 250, 330);
-		g2d.drawString("300", 440, 330);
+		g2d.drawString("Oliver", 250, 180);
+		g2d.drawString("500", 440, 180);
+		g2d.drawString("Jack", 250, 250);
+		g2d.drawString("400", 440, 250);
+		g2d.drawString("Noah", 250, 320);
+		g2d.drawString("300", 440, 320);
+		
+		g2d.setFont(Resource.smallFont);
+		g2d.setColor(Color.WHITE);
+		g2d.drawString("Jacob", 250, 390);
+		g2d.drawString("200", 440, 390);
+		g2d.drawString("Charlie", 250, 460);
+		g2d.drawString("100", 440, 460);
+		g2d.drawString("Harry", 250, 530);
+		g2d.drawString("50", 440, 530);
+		g2d.drawString("Oscar", 250, 600);
+		g2d.drawString("10", 440, 600);
 	}
 }
 

@@ -13,6 +13,7 @@ public class Resource {
 	public static final Font largeFont = new Font("Century Gothic", Font.PLAIN, 80);
 	public static final Font mediumFont = new Font("Century Gothic", Font.PLAIN, 36);
 	public static final Font standardFont = new Font("Century Gothic", Font.PLAIN, 30);
+	public static final Font smallFont = new Font("Century Gothic", Font.PLAIN, 26);
 	public static final Color iBlack = new Color(59, 64, 67);
 	public static final Color iYellow = new Color(243, 156, 18);
 	public static final Color iGreen = new Color(26, 188, 156);
@@ -39,9 +40,10 @@ public class Resource {
 	public static final BufferedImage box2 = getImage("res/img/box2.png");
 	public static final BufferedImage heart = getImage("res/img/heart.png");
 	
-	public static final BufferedImage gold = getImage("res/img/trophies/gold.png");
-	public static final BufferedImage silver = getImage("res/img/trophies/silver.png");
-	public static final BufferedImage bronze = getImage("res/img/trophies/bronze.png");
+	public static final BufferedImage[] rank = { null, getImage("res/img/trophies/rank1.png"),
+			getImage("res/img/trophies/rank2.png"), getImage("res/img/trophies/rank3.png"),
+			getImage("res/img/trophies/rank4.png"), getImage("res/img/trophies/rank5.png"),
+			getImage("res/img/trophies/rank6.png"), getImage("res/img/trophies/rank7.png")};
 	
 	public static final BufferedImage mainScreen = getImage("res/img/MainScreen.png");
 	public static final BufferedImage mainScreen2 = getImage("res/img/MainScreen2.png");
