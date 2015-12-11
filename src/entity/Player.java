@@ -113,6 +113,9 @@ public class Player extends Entity implements Movable{
 			lastX+=dx;
 			lastY+=dy;
 		}
+		if(nextTerrain==MapUtility.DESTRUCTIBLE_BLOCK){
+			Main.destroyBlock(lastX+dx,lastY+dy);
+		}
 		if(lastX!=x||lastY!=y)this.isMoving=true;
 		Main.gamescreen.currentMap.mapArray[super.y+2][super.x+2]=MapUtility.PASSABLE_TERRAIN;
 		super.x=lastX;
