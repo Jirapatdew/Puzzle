@@ -87,6 +87,7 @@ public class GameScreen extends JPanel{
 				//if(InputUtility.getKeyPressed(e.getKeyCode()))
 					//InputUtility.setKeyTriggered(e.getKeyCode(), true);
 				System.out.println(111);
+				if(InputUtility.getKeyPressed(e.getKeyCode())) return;
 				InputUtility.setKeyPressed(e.getKeyCode(), true);
 				InputUtility.setKeyTriggered(e.getKeyCode(), true);
 			}
