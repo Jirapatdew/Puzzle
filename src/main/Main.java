@@ -91,8 +91,9 @@ public class Main {
 					PointObject cur = (PointObject)obj;
 					GameScreen.currentMap.mapArray[cur.y+2][cur.x+2]=MapUtility.PASSABLE_TERRAIN;
 					playerStatus.increaseScore();
-					if(playerStatus.collectedStarThisMap>=gamescreen.currentMap.starCount) gamescreen.goToNextMap();
 					RenderableHolder.getInstance().getRenderableList().remove(obj);
+					if(playerStatus.collectedStarThisMap>=gamescreen.currentMap.starCount) gamescreen.goToNextMap();
+					
 				}
 			}
 		}

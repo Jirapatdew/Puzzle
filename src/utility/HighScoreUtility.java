@@ -157,6 +157,7 @@ public class HighScoreUtility {
 					highScoreRecord[i] = new HighScoreRecord(records[i]);
 				}catch(ScoreParsingException e){
 					System.err.println("Error parsing line "+(i+1)+", "+e.getMessage());
+					System.err.println("records[i] -> " + records[i]);
 					highScoreRecord[i] = new HighScoreRecord("ERROR_RECORD", 0);
 				}
 			}

@@ -22,6 +22,7 @@ import main.Main;
 import render.IRenderable;
 import render.RenderableHolder;
 import render.Resource;
+import utility.HighScoreUtility;
 import utility.InputUtility;
 import utility.MapUtility;
 
@@ -155,14 +156,19 @@ public class GameScreen extends JPanel{
 	}
 	public static void goToNextMap() {
 		// TODO Auto-generated method stub
-		PlayerStatus.updateLevel();
-		RenderableHolder.getInstance().getRenderableList().clear();
-		if(PlayerStatus.level>configs.AllMap){
+
+		if(PlayerStatus.level+1 >configs.AllMap){
 			System.out.println("no more map");
-			Main.gameWindow.switchScreen(new MainScreen());
+			Main.gameWindow.repaint();
+			HighScoreUtility.recordHighScore(PlayerStatus.score);
+			HighScoreUtility.displayTopScore();
+			//Main.gameWindow.switchScreen(new MainScreen());
+			//RenderableHolder.getInstance().getRenderableList().clear();
 			return;
 		}
 		else{
+			PlayerStatus.updateLevel();
+			RenderableHolder.getInstance().getRenderableList().clear();
 			PlayerStatus.enterNewMap();
 			currentMap=new Map(PlayerStatus.level,configs.cblack,configs.cpink);
 			addAllEntitiesInMap();
