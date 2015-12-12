@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import utility.HighScoreUtility;
 import main.Main;
 import render.Resource;
 import ui.StatScreen;
@@ -20,7 +21,7 @@ public class StatButton extends RoundButton {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				//JOptionPane.showMessageDialog(null, "test StatButton");
-				Main.gameWindow.switchScreen(new StatScreen());
+				HighScoreUtility.displayTopScore();
 			}
 		});
 	}

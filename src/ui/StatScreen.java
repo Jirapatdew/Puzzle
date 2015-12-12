@@ -2,17 +2,26 @@ package ui;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
 
 import javax.swing.JPanel;
 
 import button.BackButton;
+import utility.HighScoreUtility;
 import render.Resource;
 
 public class StatScreen extends JPanel {
-	public StatScreen() {
+	
+	private HighScoreUtility.HighScoreRecord[] highScoreRecords;
+	
+	public StatScreen(HighScoreUtility.HighScoreRecord[] highScoreRecords) {
 		// TODO Auto-generated constructor stub
+		this.highScoreRecords = highScoreRecords;
+		
 		setPreferredSize(new Dimension(640, 800));
 		setLayout(null);
 		
@@ -33,29 +42,25 @@ public class StatScreen extends JPanel {
 			g2d.drawImage(Resource.rank[i], 120, 150 + (70*(i-1)), 45, 45, null);
 		}
 		
-		g2d.setFont(Resource.mediumFont);
+		g2d.setFont(new Font("Century Gothic", Font.BOLD, 36));
 		g2d.setColor(Color.WHITE);
-		g2d.drawString("--- High Score ---", 170, 100);
+		String title = "---- High Score ----";
+		FontMetrics fm = g2d.getFontMetrics();
+        Rectangle2D r = fm.getStringBounds(title, g2d);
+        int x = (this.getWidth() - (int) r.getWidth()) / 2;
+        g.drawString(title, x, 100);
 		
+        
 		g2d.setFont(Resource.standardFont);
 		g2d.setColor(Color.WHITE);
-		g2d.drawString("Oliver", 250, 180);
-		g2d.drawString("500", 440, 180);
-		g2d.drawString("Jack", 250, 250);
-		g2d.drawString("400", 440, 250);
-		g2d.drawString("Noah", 250, 320);
-		g2d.drawString("300", 440, 320);
-		
-		g2d.setFont(Resource.smallFont);
-		g2d.setColor(Color.WHITE);
-		g2d.drawString("Jacob", 250, 390);
-		g2d.drawString("200", 440, 390);
-		g2d.drawString("Charlie", 250, 460);
-		g2d.drawString("100", 440, 460);
-		g2d.drawString("Harry", 250, 530);
-		g2d.drawString("50", 440, 530);
-		g2d.drawString("Oscar", 250, 600);
-		g2d.drawString("10", 440, 600);
+		for(int i = 0; i < highScoreRecords.length; i++) {
+			if(i==30) {
+				g2d.setFont(Resource.smallFont);
+				g2d.setColor(Color.WHITE);
+			}
+			g2d.drawString(highScoreRecords[i].getName(), 250, 180 + (70*i));
+			g2d.drawString(Integer.toString(highScoreRecords[i].getScore()), 440, 180 + (70*i));
+		}
 	}
 }
 

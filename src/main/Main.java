@@ -27,11 +27,6 @@ public class Main {
 	public static GameScreen gamescreen;
 	public static PlayerStatus playerStatus;
 	public static void main(String[] args) throws InterruptedException {
-		int mapNumber=1;
-//		GameScreen gamescreen = new GameScreen(1);
-//		MainScreen mainscreen = new MainScreen();
-//		InstructionScreen instructionscreen = new InstructionScreen();
-//		StatScreen statscreen = new StatScreen();
 		gameWindow = new GameWindow();
 		gameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gameWindow.setVisible(true);
