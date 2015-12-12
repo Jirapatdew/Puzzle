@@ -8,7 +8,7 @@ public class GameWindow extends JFrame {
 	public JPanel currentScene;
 	
 	public GameWindow() {
-		super("My Puzzle");
+		super("Star King");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
 		currentScene = new MainScreen();

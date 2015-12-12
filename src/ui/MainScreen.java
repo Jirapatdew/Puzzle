@@ -3,10 +3,12 @@ package ui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.geom.Rectangle2D;
 
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -63,8 +65,14 @@ public class MainScreen extends JPanel {
 		g2d.drawImage(Resource.mainScreen2,0,0,640,800,null);
 		g2d.setColor(new Color(0, 0, 0, 200));
 		g2d.fillRect(0, 0, 640, 800);
+		
 		g2d.setFont(Resource.largeFont);
 		g2d.setColor(Color.WHITE);
-		g2d.drawString("My Puzzle", 125, 200);
+		
+		String title = "Star King";
+		FontMetrics fm = g2d.getFontMetrics();
+        Rectangle2D r = fm.getStringBounds(title, g2d);
+        int x = (this.getWidth() - (int) r.getWidth()) / 2;
+        g.drawString(title, x, 200);
 	}
 }
