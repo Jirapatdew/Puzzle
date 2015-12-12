@@ -11,6 +11,8 @@ import utility.MapUtility;
 public class Map implements IRenderable{
 
 	public int[][] mapArray = null;
+	public int starCount;
+	public boolean finished;
 	int singleWidth,singleHeight;
 	Color backgroundColor;
 	Color foregoundColor;
@@ -23,6 +25,17 @@ public class Map implements IRenderable{
 		this.foregoundColor=fg;
 		this.singleHeight=configs.singleHeight;
 		this.singleWidth=configs.singleWidth;
+		this.starCount=countAllStar();
+		finished=false;
+	}
+	public int countAllStar(){
+		int ret=0;
+		for(int i=2;i<mapArray.length-2;i++){
+			for(int j=2;j<mapArray[i].length-2;j++){
+				if(mapArray[i][j]==MapUtility.POINT) ret++;
+			}
+		}
+		return ret;
 	}
 	public void addEntity(Entity e){
 		entities.add(e);
