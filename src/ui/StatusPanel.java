@@ -36,7 +36,7 @@ public class StatusPanel extends JPanel{
 		
 		g2d.setFont(Resource.mediumFont);
 		g2d.setColor(Color.WHITE);
-		g2d.drawString("Score : " + "220", 220, 70);
+		g2d.drawString("Score : " + PlayerStatus.score, 220, 70);
 		
 		for(int i = 0; i < PlayerStatus.heart; i++) {
 			g2d.drawImage(Resource.heart, 220 + (40 * i), 90, 30, 30, null);

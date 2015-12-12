@@ -17,7 +17,7 @@ public class PlayerStatus {
 
 	public static void increaseScore() {
 		// TODO Auto-generated method stub
-		score++;
+		score += 10;
 		collectedStarThisMap++;
 	}
 	public static void updateLevel(){
