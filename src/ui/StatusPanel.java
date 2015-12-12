@@ -2,8 +2,10 @@ package ui;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
 
 import javax.swing.JPanel;
 
@@ -36,7 +38,12 @@ public class StatusPanel extends JPanel{
 		
 		g2d.setFont(Resource.mediumFont);
 		g2d.setColor(Color.WHITE);
-		g2d.drawString("Score : " + PlayerStatus.score, 220, 70);
+		//g2d.drawString("Score : " + PlayerStatus.score, 220, 70);
+		String text = "Score : " + PlayerStatus.score;
+		FontMetrics fm = g2d.getFontMetrics();
+        Rectangle2D r = fm.getStringBounds(text, g2d);
+        int x = (this.getWidth() - (int) r.getWidth()) / 2;
+        g2d.drawString(text, x, 70);
 		
 		for(int i = 0; i < PlayerStatus.heart; i++) {
 			g2d.drawImage(Resource.heart, 220 + (40 * i), 90, 30, 30, null);
