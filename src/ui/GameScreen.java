@@ -84,6 +84,9 @@ public class GameScreen extends JPanel{
 			@Override
 			public void keyPressed(KeyEvent e) {
 				// TODO Auto-generated method stub
+				//if(InputUtility.getKeyPressed(e.getKeyCode()))
+					//InputUtility.setKeyTriggered(e.getKeyCode(), true);
+				System.out.println(111);
 				InputUtility.setKeyPressed(e.getKeyCode(), true);
 				InputUtility.setKeyTriggered(e.getKeyCode(), true);
 			}

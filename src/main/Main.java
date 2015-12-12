@@ -70,8 +70,14 @@ public class Main {
 		else if(InputUtility.getKeyTriggered(KeyEvent.VK_RIGHT)){
 			player.calculateDestination(configs.EAST,gamescreen.getMapArray());
 		}
+		
+		//System.out.println(InputUtility.getKeyTriggered(KeyEvent.VK_UP)+" "+
+		//		InputUtility.getKeyTriggered(KeyEvent.VK_DOWN)+" "+
+		//		InputUtility.getKeyTriggered(KeyEvent.VK_LEFT)+" "+
+		//		InputUtility.getKeyTriggered(KeyEvent.VK_RIGHT)+" ");
 		//System.out.println(player.exactX+" "+player.exactY+" e");
 		//System.out.println(player.lastX+" "+player.lastY+" l");
+		InputUtility.postUpdate();
 		
 		player.update();
 		for(IRenderable obj : RenderableHolder.getInstance().getRenderableList()){
@@ -86,7 +92,7 @@ public class Main {
 		}
 		RenderableHolder.getInstance().getRenderableList().add(player);
 			
-		InputUtility.postUpdate();
+		
 	}
 	public static void moveBlock(int currentX, int currentY,int lastX,int lastY) {
 		// TODO Auto-generated method stub
@@ -97,7 +103,7 @@ public class Main {
 				if(mvb.x==currentX&&mvb.y==currentY){
 					RenderableHolder.getInstance().getRenderableList().remove(cur);
 					gamescreen.currentMap.mapArray[currentY+2][currentX+2]=MapUtility.PLAYER;
-					gamescreen.currentMap.mapArray[lastY+2][lastY+2]=MapUtility.MOVABLE_BLOCK;
+					gamescreen.currentMap.mapArray[lastY+2][lastX+2]=MapUtility.MOVABLE_BLOCK;
 					mvb.setNewPlace(lastX,lastY);
 					RenderableHolder.getInstance().getRenderableList().add(mvb);
 				}
