@@ -8,6 +8,7 @@ import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import config.PlayerStatus;
@@ -17,6 +18,7 @@ import entity.Map;
 import entity.MovableBlock;
 import entity.Player;
 import entity.PointObject;
+import main.Main;
 import render.IRenderable;
 import render.RenderableHolder;
 import render.Resource;
@@ -150,6 +152,16 @@ public class GameScreen extends JPanel{
 			}
 		}
 		
+	}
+	public static void goToNextMap() {
+		// TODO Auto-generated method stub
+		PlayerStatus.updateLevel();
+		if(PlayerStatus.level>configs.AllMap){
+			System.out.println("no more map");
+			Main.gameWindow.switchScreen(new MainScreen());
+			return;
+		}
+		else currentMap=new Map(PlayerStatus.level,configs.cblack,configs.cpink);
 	}
 	
 }

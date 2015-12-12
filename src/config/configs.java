@@ -5,6 +5,7 @@ import java.awt.Color;
 import render.Resource;
 
 public class configs {
+	public static final int AllMap = 1;
 	public static int mapGridWidth=12;
 	public static int mapGridHeight=14;
 	public static int singleWidth=40;
