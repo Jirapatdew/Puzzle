@@ -9,6 +9,7 @@ import entity.DestructibleBlock;
 import entity.Map;
 import entity.MovableBlock;
 import entity.Player;
+import entity.PointObject;
 import render.IRenderable;
 import render.RenderableHolder;
 import ui.GameScreen;
@@ -86,6 +87,15 @@ public class Main {
 			}
 			else if(obj instanceof DestructibleBlock){
 				if(((DestructibleBlock)obj).update(player.isMoving)){
+					RenderableHolder.getInstance().getRenderableList().remove(obj);
+				}
+			}
+			else if(obj instanceof PointObject){
+				((PointObject)obj).update(player.exactX,player.exactY);
+				if(((PointObject)obj).isDestroyed){
+					PointObject cur = (PointObject)obj;
+					GameScreen.currentMap.mapArray[cur.y+2][cur.x+2]=MapUtility.PASSABLE_TERRAIN;
+					playerStatus.increaseScore();
 					RenderableHolder.getInstance().getRenderableList().remove(obj);
 				}
 			}

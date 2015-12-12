@@ -42,5 +42,5 @@ public class configs {
 	public static int SOUTH=2;
 	public static int WEST=3;
 	
-	public static int playerSpeed = 10;
+	public static int playerSpeed = 5;
 }

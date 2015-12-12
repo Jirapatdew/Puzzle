@@ -12,4 +12,9 @@ public class PlayerStatus {
 		heart = 5;
 		score = 0;
 	}
+
+	public static void increaseScore() {
+		// TODO Auto-generated method stub
+		score++;
+	}
 }
