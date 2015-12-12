@@ -73,6 +73,6 @@ public class MainScreen extends JPanel {
 		FontMetrics fm = g2d.getFontMetrics();
         Rectangle2D r = fm.getStringBounds(title, g2d);
         int x = (this.getWidth() - (int) r.getWidth()) / 2;
-        g.drawString(title, x, 200);
+        g2d.drawString(title, x, 200);
 	}
 }
