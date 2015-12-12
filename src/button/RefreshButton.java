@@ -9,6 +9,8 @@ import config.PlayerStatus;
 import main.Main;
 import render.Resource;
 import ui.GameScreen;
+import utility.HighScoreUtility;
+import utility.HighScoreUtility.HighScoreRecord;
 
 public class RefreshButton extends RoundButton {
 	public RefreshButton() {
@@ -22,11 +24,15 @@ public class RefreshButton extends RoundButton {
 				// TODO Auto-generated method stub
 				if(PlayerStatus.heart > 1) {
 					PlayerStatus.heart--;
-					PlayerStatus.collectedStarThisMap=0;
+					PlayerStatus.collectedStarThisMap = 0;
+					PlayerStatus.score -= PlayerStatus.newScore;
+					PlayerStatus.newScore = 0;
 					Main.gameWindow.switchScreen(new GameScreen());
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "GAME OVER");
+					//JOptionPane.showMessageDialog(null, "GAME OVER");
+					HighScoreUtility.recordHighScore(PlayerStatus.score);
+					HighScoreUtility.displayTopScore();
 				}
 				
 			}
