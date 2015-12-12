@@ -22,6 +22,7 @@ public class RefreshButton extends RoundButton {
 				// TODO Auto-generated method stub
 				if(PlayerStatus.heart > 1) {
 					PlayerStatus.heart--;
+					PlayerStatus.collectedStarThisMap=0;
 					Main.gameWindow.switchScreen(new GameScreen());
 				}
 				else {

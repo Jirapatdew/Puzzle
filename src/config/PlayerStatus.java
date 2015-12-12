@@ -23,4 +23,9 @@ public class PlayerStatus {
 	public static void updateLevel(){
 		level++;
 	}
+
+	public static void enterNewMap() {
+		// TODO Auto-generated method stub
+		collectedStarThisMap=0;
+	}
 }

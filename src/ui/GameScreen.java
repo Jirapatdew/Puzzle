@@ -110,7 +110,7 @@ public class GameScreen extends JPanel{
 		this.setVisible(true);
 	}
 	
-	private void addAllEntitiesInMap() {
+	private static void addAllEntitiesInMap() {
 		// TODO Auto-generated method stub
 		for(int i=2;i<currentMap.mapArray.length-2;i++){
 			for(int j=2;j<currentMap.mapArray[i].length-2;j++){
@@ -156,12 +156,17 @@ public class GameScreen extends JPanel{
 	public static void goToNextMap() {
 		// TODO Auto-generated method stub
 		PlayerStatus.updateLevel();
+		RenderableHolder.getInstance().getRenderableList().clear();
 		if(PlayerStatus.level>configs.AllMap){
 			System.out.println("no more map");
 			Main.gameWindow.switchScreen(new MainScreen());
 			return;
 		}
-		else currentMap=new Map(PlayerStatus.level,configs.cblack,configs.cpink);
+		else{
+			PlayerStatus.enterNewMap();
+			currentMap=new Map(PlayerStatus.level,configs.cblack,configs.cpink);
+			addAllEntitiesInMap();
+		}
 	}
 	
 }

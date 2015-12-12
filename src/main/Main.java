@@ -53,7 +53,7 @@ public class Main {
 		for(IRenderable i : RenderableHolder.getInstance().getRenderableList()){
 			if(i instanceof Player){
 				player=(Player)i;
-				RenderableHolder.getInstance().getRenderableList().remove(i);
+				//RenderableHolder.getInstance().getRenderableList().remove(i);
 				break;
 			}
 		}
@@ -101,7 +101,7 @@ public class Main {
 				}
 			}
 		}
-		RenderableHolder.getInstance().getRenderableList().add(player);
+		//RenderableHolder.getInstance().getRenderableList().add(player);
 			
 		
 	}
