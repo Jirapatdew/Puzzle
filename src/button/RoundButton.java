@@ -9,7 +9,7 @@ import javax.swing.*;
 
 public class RoundButton extends JButton {
 
-	private BufferedImage bimg;
+	protected BufferedImage bimg;
 	public RoundButton(BufferedImage bimg) {
 		this.bimg = bimg;
 		setFocusable(false);

@@ -15,6 +15,7 @@ import utility.HighScoreUtility.HighScoreRecord;
 public class RefreshButton extends RoundButton {
 	public RefreshButton() {
 		super(Resource.refreshButton);
+		if(PlayerStatus.heart == 1) bimg = Resource.flagButton;
 		setSize(70, 70);
 		
 		addActionListener(new ActionListener() {

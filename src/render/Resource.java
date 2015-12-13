@@ -73,7 +73,8 @@ public class Resource {
 	public static final BufferedImage controlButton = getImage("res/img/button/game_control.png");
 	public static final BufferedImage infoButton = getImage("res/img/button/info.png");
 	public static final BufferedImage backButton = getImage("res/img/button/back2.png");
-	public static final BufferedImage menuButton = getImage("res/img/button/menu.png");
+	public static final BufferedImage menuButton = getImage("res/img/button/home.png");
+	public static final BufferedImage flagButton = getImage("res/img/button/flag.png");
 	public static final BufferedImage refreshButton = getImage("res/img/button/refresh.png");
 	
 }
