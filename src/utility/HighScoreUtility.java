@@ -59,8 +59,8 @@ public class HighScoreUtility {
 		}
 		
 		private static String[] defaultRecord(){
-			return new String[]{"Oliver:500","Jack:400","Noah:300",
-					"Jacob:200","Charlie:100","Harry:50",
+			return new String[]{"Oliver:200","Jack:100","Noah:50",
+					"Jacob:40","Charlie:30","Harry:20",
 					"Oscar:10"};
 		}
 
@@ -96,6 +96,12 @@ public class HighScoreUtility {
 				highScoreRecord[i] = highScoreRecord[i-1];
 			}
 			String name = JOptionPane.showInputDialog(null, "Congratulation, you are ranked " + (index + 1) + "\nPlease enter your name", "High score", JOptionPane.INFORMATION_MESSAGE);
+			
+			/*--------------------------------------------------*/
+			if(name == null) return; //Cancel
+			else if(name.length() > 10) name = name.substring(0, 10);
+			/*--------------------------------------------------*/
+			
 			highScoreRecord[index] = new HighScoreRecord(name, score);
 			try {
 				

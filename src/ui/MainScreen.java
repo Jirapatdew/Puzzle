@@ -27,7 +27,7 @@ import render.Resource;
 public class MainScreen extends JPanel {
 	public MainScreen() {
 		// TODO Auto-generated constructor stub
-		if(PlayerStatus.enableSound) Resource.s_back.loop();
+		//if(PlayerStatus.enableSound) Resource.s_back.loop();
 		
 		setPreferredSize(new Dimension(640, 800));
 		setLayout(null);
