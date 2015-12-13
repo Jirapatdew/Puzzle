@@ -98,8 +98,21 @@ public class HighScoreUtility {
 			String name = JOptionPane.showInputDialog(null, "Congratulation, you are ranked " + (index + 1) + "\nPlease enter your name", "High score", JOptionPane.INFORMATION_MESSAGE);
 			
 			/*--------------------------------------------------*/
-			if(name == null) return; //Cancel
-			else if(name.length() > 10) name = name.substring(0, 10);
+			String errorMsg = null;
+			if(name == null) return; //Click Cancel
+			if(name.indexOf(":") != -1) errorMsg = "Wrong format Name (have \":\")";
+			if(name.length() > 10) errorMsg = "Your name too long (more than 10)";
+				
+				//name = name.substring(0, 10);
+				while(errorMsg != null) {
+					name = JOptionPane.showInputDialog(null, errorMsg + "\nPlease enter your name", "High score", JOptionPane.ERROR_MESSAGE);
+					errorMsg = null;
+					if(name == null) return;
+					if(name.indexOf(":") != -1) errorMsg = "Wrong format Name (have \":\")";
+					if(name.length() > 10) errorMsg = "Your name too long (more than 10)";
+				}
+			
+			
 			/*--------------------------------------------------*/
 			
 			highScoreRecord[index] = new HighScoreRecord(name, score);
