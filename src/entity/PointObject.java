@@ -40,6 +40,7 @@ public class PointObject extends Entity{
 	public void update(int playerExactX,int playerExactY) {
 		// TODO Auto-generated method stub
 		if(collideWith(playerExactX,playerExactY)) this.isDestroyed=true;
+		if(this.isDestroyed) Resource.s_star.play();
 	}
 
 	private boolean collideWith(int playerExactX, int playerExactY) {

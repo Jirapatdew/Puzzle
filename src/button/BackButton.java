@@ -21,6 +21,8 @@ public class BackButton extends RoundButton {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				//JOptionPane.showMessageDialog(null, "test BackButton");
+				Resource.s_button.play();
+				
 				Main.gameWindow.switchScreen(new MainScreen());
 			}
 		});

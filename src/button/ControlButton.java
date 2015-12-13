@@ -20,6 +20,8 @@ public class ControlButton extends RoundButton {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				//JOptionPane.showMessageDialog(null, "test ControlButton");
+				Resource.s_button.play();
+				
 				Main.gameWindow.switchScreen(new InstructionScreen());
 			}
 		});

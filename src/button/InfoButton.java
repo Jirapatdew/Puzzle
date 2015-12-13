@@ -19,6 +19,8 @@ public class InfoButton extends RoundButton {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				Resource.s_button.play();
+				
 				Main.gameWindow.switchScreen(new InfoScreen());
 			}
 		});

@@ -1,5 +1,7 @@
 package render;
 
+import java.applet.Applet;
+import java.applet.AudioClip;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.image.BufferedImage;
@@ -27,6 +29,15 @@ public class Resource {
 			return  null;
 		}
 	}
+	private static AudioClip getSound(String directory){
+		try {
+			ClassLoader loader = Resource.class.getClassLoader();
+			return Applet.newAudioClip(loader.getResource(directory));
+		} catch(Exception e) {
+			return  null;
+		}
+	}
+	
 	
 	public final static BufferedImage destructible_block=getImage("res/img/box.png");
 	public final static BufferedImage movable_block=getImage("res/img/box2.png");
@@ -39,6 +50,13 @@ public class Resource {
 	public static final BufferedImage box = getImage("res/img/box.png");
 	public static final BufferedImage box2 = getImage("res/img/box2.png");
 	public static final BufferedImage heart = getImage("res/img/heart.png");
+	
+	public static AudioClip s_button = getSound("res/sound/s_button.wav");
+	public static AudioClip s_star = getSound("res/sound/s_star.wav");
+	public static AudioClip s_crash = getSound("res/sound/s_crash.wav");
+	public static AudioClip s_hit = getSound("res/sound/s_hit.wav");
+	public static AudioClip s_back = getSound("res/sound/s_back.wav");
+	public static AudioClip s_back2 = getSound("res/sound/s_back2.wav");
 	
 	public static final BufferedImage[] rank = { null, getImage("res/img/trophies/rank1.png"),
 			getImage("res/img/trophies/rank2.png"), getImage("res/img/trophies/rank3.png"),

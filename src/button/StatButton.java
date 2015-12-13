@@ -21,6 +21,8 @@ public class StatButton extends RoundButton {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				//JOptionPane.showMessageDialog(null, "test StatButton");
+				Resource.s_button.play();
+				
 				HighScoreUtility.displayTopScore();
 			}
 		});

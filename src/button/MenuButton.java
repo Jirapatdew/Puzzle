@@ -17,6 +17,8 @@ public class MenuButton extends RoundButton {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				Resource.s_button.play();
+				
 				Main.gameWindow.switchScreen(new MainScreen());
 			}
 		});

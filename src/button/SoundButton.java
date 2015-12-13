@@ -16,14 +16,20 @@ public class SoundButton extends RoundButton {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				Resource.s_button.play();
+				
 				if(muteSoundButton.isVisible()){
 					//open sound
 					//JOptionPane.showMessageDialog(null, "Open Sound");
+					Resource.s_back.loop();
+					
 					PlayerStatus.enableSound = true;
 					muteSoundButton.setVisible(false);
 				}
 				else {
 					//close sound
+					Resource.s_back.stop();
+					
 					//JOptionPane.showMessageDialog(null, "Close Sound");
 					PlayerStatus.enableSound = false;
 					muteSoundButton.setVisible(true);

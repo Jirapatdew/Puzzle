@@ -21,11 +21,14 @@ import button.MuteSoundButton;
 import button.PlayButton;
 import button.SoundButton;
 import button.StatButton;
+import config.PlayerStatus;
 import render.Resource;
 
 public class MainScreen extends JPanel {
 	public MainScreen() {
 		// TODO Auto-generated constructor stub
+		if(PlayerStatus.enableSound) Resource.s_back.loop();
+		
 		setPreferredSize(new Dimension(640, 800));
 		setLayout(null);
 		

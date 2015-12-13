@@ -12,6 +12,7 @@ import entity.Player;
 import entity.PointObject;
 import render.IRenderable;
 import render.RenderableHolder;
+import render.Resource;
 import ui.GameScreen;
 import ui.GameWindow;
 import ui.InstructionScreen;
@@ -83,6 +84,7 @@ public class Main {
 			else if(obj instanceof DestructibleBlock){
 				if(((DestructibleBlock)obj).update(player.isMoving)){
 					RenderableHolder.getInstance().getRenderableList().remove(obj);
+					Resource.s_crash.play();
 				}
 			}
 			else if(obj instanceof PointObject){
@@ -103,7 +105,7 @@ public class Main {
 	}
 	public static void moveBlock(int currentX, int currentY,int lastX,int lastY) {
 		// TODO Auto-generated method stub
-		
+		Resource.s_hit.play();
 		for(IRenderable cur : RenderableHolder.getInstance().getRenderableList()){
 			if(cur instanceof MovableBlock){
 				MovableBlock mvb = (MovableBlock)cur;
@@ -119,6 +121,7 @@ public class Main {
 	}
 	public static void destroyBlock(int currentX, int currentY) {
 		// TODO Auto-generated method stub
+		
 		for(IRenderable cur : RenderableHolder.getInstance().getRenderableList()){
 			if(cur instanceof DestructibleBlock){
 				DestructibleBlock dtb = (DestructibleBlock)cur;

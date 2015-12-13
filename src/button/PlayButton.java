@@ -20,6 +20,8 @@ public class PlayButton extends RoundButton {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				Resource.s_button.play();
+				
 				PlayerStatus.reset();
 				Main.gameWindow.switchScreen(new GameScreen());
 			}

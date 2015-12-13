@@ -22,6 +22,8 @@ public class RefreshButton extends RoundButton {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				Resource.s_button.play();
+				
 				if(PlayerStatus.heart > 1) {
 					PlayerStatus.heart--;
 					PlayerStatus.collectedStarThisMap = 0;

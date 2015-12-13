@@ -9,7 +9,7 @@ public class PlayerStatus {
 	public static int newScore;
 	
 	public static void reset(){
-		enableSound = true;
+		//enableSound = true;
 		level = 1;
 		heart = 5;
 		score = 0;
