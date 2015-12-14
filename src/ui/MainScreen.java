@@ -16,8 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import button.ControlButton;
-import button.InfoButton;
-import button.MuteSoundButton;
+import button.LikeButton;
 import button.PlayButton;
 import button.SoundButton;
 import button.StatButton;
@@ -45,16 +44,13 @@ public class MainScreen extends JPanel {
 		add(controlButton);
 		controlButton.setLocation(225, 520);
 		
-		MuteSoundButton muteSoundButton = new MuteSoundButton();
-		SoundButton soundButton = new SoundButton(muteSoundButton);
+		SoundButton soundButton = new SoundButton();
 		add(soundButton);
-		add(muteSoundButton); // must add after soundButton
 		soundButton.setLocation(335, 520);
-		muteSoundButton.setLocation(335, 520);
 		
-		InfoButton infoButton = new InfoButton();
-		add(infoButton);
-		infoButton.setLocation(445, 520);
+		LikeButton likeButton = new LikeButton();
+		add(likeButton);
+		likeButton.setLocation(445, 520);
 		
 	}
 	

@@ -3,6 +3,7 @@ package ui;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import config.PlayerStatus;
 import render.Resource;
 
 public class GameWindow extends JFrame {
@@ -19,7 +20,7 @@ public class GameWindow extends JFrame {
 		setVisible(true);
 		currentScene.requestFocus();
 		
-		Resource.s_back.loop();
+		if(PlayerStatus.enableSound) Resource.s_back.loop();
 	}
 	
 	public void switchScreen(JPanel screen){

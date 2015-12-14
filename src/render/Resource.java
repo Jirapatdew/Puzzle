@@ -66,7 +66,7 @@ public class Resource {
 	public static AudioClip s_crash = getSound("res/sound/s_crash.wav");
 	public static AudioClip s_hit = getSound("res/sound/s_hit.wav");
 	public static AudioClip s_back = getSound("res/sound/s_back.wav");
-	public static AudioClip s_back2 = getSound("res/sound/s_back2.wav");
+	
 	
 	public static final BufferedImage[] rank = { null, getImage("res/img/trophies/rank1.png"),
 			getImage("res/img/trophies/rank2.png"), getImage("res/img/trophies/rank3.png"),
@@ -86,5 +86,6 @@ public class Resource {
 	public static final BufferedImage menuButton = getImage("res/img/button/home.png");
 	public static final BufferedImage flagButton = getImage("res/img/button/flag.png");
 	public static final BufferedImage refreshButton = getImage("res/img/button/refresh.png");
-	
+	public static final BufferedImage likeButton = getImage("res/img/button/like.png");
+	public static final BufferedImage likeButton2 = getImage("res/img/button/like2.png");
 }

@@ -7,24 +7,28 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 import config.PlayerStatus;
+import entity.Player;
+import main.Main;
 import render.Resource;
+import ui.InfoScreen;
 
-public class SoundButton extends RoundButton {
-	public SoundButton() {
-		super(Resource.soundButton);
-		if(!PlayerStatus.enableSound) bimg = Resource.muteSoundButton;
-		
+public class LikeButton extends RoundButton {
+	public LikeButton() {
+		super(Resource.likeButton);
 		setSize(80, 80);
+		
 		addActionListener(new ActionListener() {
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				Resource.s_button.play();
 				
-				PlayerStatus.enableSound = !PlayerStatus.enableSound;
+				//Main.gameWindow.switchScreen(new InfoScreen());
+				PlayerStatus.CheatMode = !PlayerStatus.CheatMode;
 				
-				if(PlayerStatus.enableSound) Resource.s_back.loop();
-				else Resource.s_back.stop();
+				if(PlayerStatus.CheatMode) System.out.println("Cheat Mode is Active");
+				else System.out.println("Cheat Mode is Close");
 			}
 		});
 	}
@@ -32,7 +36,8 @@ public class SoundButton extends RoundButton {
 	protected void paintComponent(Graphics g) {
 		// TODO Auto-generated method stub
 		super.paintComponent(g);
-		if(PlayerStatus.enableSound) bimg = Resource.soundButton;
-		else bimg = Resource.muteSoundButton;
+		if(PlayerStatus.CheatMode) bimg = Resource.likeButton2;
+		else bimg = Resource.likeButton;
 	}
 }
+

@@ -1,5 +1,6 @@
 package button;
 
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,7 +16,7 @@ import utility.HighScoreUtility.HighScoreRecord;
 public class RefreshButton extends RoundButton {
 	public RefreshButton() {
 		super(Resource.refreshButton);
-		if(PlayerStatus.heart == 1) bimg = Resource.flagButton;
+		
 		setSize(70, 70);
 		
 		addActionListener(new ActionListener() {
@@ -40,5 +41,12 @@ public class RefreshButton extends RoundButton {
 				
 			}
 		});
+	}
+	@Override
+	protected void paintComponent(Graphics g) {
+		// TODO Auto-generated method stub
+		super.paintComponent(g);
+		if(PlayerStatus.heart == 1) bimg = Resource.flagButton;
+		else bimg = Resource.refreshButton;
 	}
 }

@@ -1,5 +1,7 @@
 package utility;
 
+import java.util.ArrayList;
+
 public class InputUtility {
 
 	private static int mouseX,mouseY;
@@ -7,6 +9,8 @@ public class InputUtility {
 	private static boolean mouseLeftTriggered,mouseRightTriggered;
 	private static boolean[] keyPressed = new boolean[256];
 	private static boolean[] keyTriggered = new boolean[256];
+	public static ArrayList<Integer> history;
+	public static boolean isHistoryUpdate = false;
 	
 	public static int getMouseX() {
 		return mouseX;

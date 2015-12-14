@@ -7,6 +7,8 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.lang.management.ManagementFactory;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -22,6 +24,7 @@ import main.Main;
 import render.IRenderable;
 import render.RenderableHolder;
 import render.Resource;
+import utility.CheatUtility;
 import utility.HighScoreUtility;
 import utility.InputUtility;
 import utility.MapUtility;
@@ -31,6 +34,8 @@ public class GameScreen extends JPanel{
 	 * 
 	 */
 	private static final long serialVersionUID = -8593735507163883962L;
+	
+	
 	public static Map currentMap;
 	public static int[][] getMapArray(){
 		if(currentMap.mapArray==null) System.out.println("mapnull");
@@ -38,6 +43,8 @@ public class GameScreen extends JPanel{
 	}
 	public GameScreen(){
 		super();
+		InputUtility.history = new ArrayList<Integer>();
+		
 		this.currentMap = new Map(PlayerStatus.level,configs.cblack,configs.cpink);
 		RenderableHolder.getInstance().getRenderableList().clear();
 		//MapUtility.printMap(currentMap.mapArray);
@@ -93,6 +100,28 @@ public class GameScreen extends JPanel{
 				if(InputUtility.getKeyPressed(e.getKeyCode())) return;
 				InputUtility.setKeyPressed(e.getKeyCode(), true);
 				InputUtility.setKeyTriggered(e.getKeyCode(), true);
+				
+				if(!PlayerStatus.CheatMode) return; //CheatMode off
+				
+				if(e.getKeyCode() == KeyEvent.VK_ENTER){
+					ArrayList<Integer> Temp = InputUtility.history;
+					InputUtility.history = new ArrayList<Integer>();
+					Thread t = new Thread(new CheatUtility(Temp));
+					Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
+					t.start();
+					t.setPriority(Thread.MIN_PRIORITY);
+				}
+				else {
+					InputUtility.history.add(e.getKeyCode());
+					if(InputUtility.history.size()>10) InputUtility.history.remove(0);
+					
+					//Print key history
+					for(int j= 0; j<InputUtility.history.size(); j++){
+						 System.out.printf("%c",InputUtility.history.get(j));
+					 }
+					 System.out.println("");
+				}
+					
 			}
 
 			@Override
