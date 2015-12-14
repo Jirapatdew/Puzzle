@@ -18,7 +18,7 @@ public class Map implements IRenderable{
 	Color foregoundColor;
 	CopyOnWriteArrayList<Entity> entities = new CopyOnWriteArrayList<Entity>();
 	public Map(int mapNumber,Color bg,Color fg){
-		String mapDirectory="src/res/map/map"+mapNumber+".txt";
+		String mapDirectory="res/map/map"+mapNumber+".txt";
 		this.mapArray=MapUtility.readMap(mapDirectory);
 		this.entities= new CopyOnWriteArrayList<Entity>();
 		this.backgroundColor=bg;

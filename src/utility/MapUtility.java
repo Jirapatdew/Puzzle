@@ -8,6 +8,7 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 import config.configs;
+import render.Resource;
 
 public class MapUtility {
 	public static int PLAYER=4;
@@ -18,16 +19,11 @@ public class MapUtility {
 	public static int POINT=5;
 	public static int mapOffsetX=10;
 	public static int mapOffsetY=10;
-	public static int[][] readMap(String file) {
+	public static int[][] readMap(String directory) {
 		int[][] mapArray=new int[configs.mapGridHeight+4][configs.mapGridWidth+4];
-		Scanner s=null;
-		try {
-			s = new Scanner(new FileReader(file));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			System.out.println("File Not Found");
-			e.printStackTrace();
-		}
+		
+		Scanner s = new Scanner(Resource.getInput(directory));
+		
 		for(int i=0;i<configs.mapGridHeight+4;i++) for(int j=0;j<configs.mapGridWidth+4;j++) mapArray[i][j]=1;
 		for(int i=0;i<configs.mapGridHeight;i++){
 			for(int j=0;j<configs.mapGridWidth;j++){

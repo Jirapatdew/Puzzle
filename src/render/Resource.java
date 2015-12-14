@@ -5,8 +5,11 @@ import java.applet.AudioClip;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.image.BufferedImage;
+import java.io.InputStream;
 
 import javax.imageio.ImageIO;
+
+import utility.MapUtility;
 
 
 
@@ -37,7 +40,14 @@ public class Resource {
 			return  null;
 		}
 	}
-	
+	public static InputStream getInput(String directory){
+		try {
+			ClassLoader loader = Resource.class.getClassLoader();
+			return  loader.getResourceAsStream(directory);
+		} catch(Exception e) {
+			return  null;
+		}
+	}
 	
 	public final static BufferedImage destructible_block=getImage("res/img/box.png");
 	public final static BufferedImage movable_block=getImage("res/img/box2.png");
