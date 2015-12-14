@@ -183,7 +183,7 @@ public class GameScreen extends JPanel{
 		}
 		
 	}
-	public static void goToNextMap() {
+	public synchronized static void goToNextMap() {
 		// TODO Auto-generated method stub
 
 		if(PlayerStatus.level+1 >configs.AllMap){

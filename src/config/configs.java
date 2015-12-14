@@ -6,6 +6,7 @@ import render.Resource;
 
 public class configs {
 	public static final int AllMap = 5;
+	public static final int starPoint = 10;
 	public static int mapGridWidth=12;
 	public static int mapGridHeight=14;
 	public static int singleWidth=40;
@@ -44,4 +45,5 @@ public class configs {
 	public static int WEST=3;
 	
 	public static int playerSpeed = 10;
+	
 }

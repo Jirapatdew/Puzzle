@@ -26,7 +26,7 @@ import utility.MapUtility;
 public class Main {
 	public static GameWindow gameWindow;
 	public static GameScreen gamescreen;
-	public static PlayerStatus playerStatus;
+
 	public static void main(String[] args) throws InterruptedException {
 		gameWindow = new GameWindow();
 		gameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -92,9 +92,9 @@ public class Main {
 				if(((PointObject)obj).isDestroyed){
 					PointObject cur = (PointObject)obj;
 					GameScreen.currentMap.mapArray[cur.y+2][cur.x+2]=MapUtility.PASSABLE_TERRAIN;
-					playerStatus.increaseScore();
+					PlayerStatus.increaseScore(configs.starPoint,1);
 					RenderableHolder.getInstance().getRenderableList().remove(obj);
-					if(playerStatus.collectedStarThisMap>=gamescreen.currentMap.starCount) gamescreen.goToNextMap();
+					if(PlayerStatus.collectedStarThisMap>=gamescreen.currentMap.starCount) gamescreen.goToNextMap();
 					
 				}
 			}

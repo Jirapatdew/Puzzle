@@ -39,12 +39,12 @@ public class CheatUtility implements Runnable {
 		else if(checkCode(CheatCode[1])){
 			System.out.println("ADDSCORE");
 			
-			PlayerStatus.score += 50;
+			PlayerStatus.increaseScore(50, 0);
 		}
 		else if(checkCode(CheatCode[2])){
 			System.out.println("ADDHEART");
 			
-			PlayerStatus.heart = 5;
+			PlayerStatus.increaseheart(5-PlayerStatus.heart);
 		}
 		else if(checkCode(CheatCode[3])){
 			System.out.println("GOTOLEVEL");
@@ -95,7 +95,8 @@ public class CheatUtility implements Runnable {
 				}
  			}while(!isGetInput);
 			
-			PlayerStatus.score = score;
+			PlayerStatus.increaseScore(score - PlayerStatus.score, 3);
+
 		}
 	}
 

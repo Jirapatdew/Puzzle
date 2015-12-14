@@ -27,10 +27,8 @@ public class RefreshButton extends RoundButton {
 				Resource.s_button.play();
 				
 				if(PlayerStatus.heart > 1) {
-					PlayerStatus.heart--;
-					PlayerStatus.collectedStarThisMap = 0;
-					PlayerStatus.score -= PlayerStatus.newScore;
-					PlayerStatus.newScore = 0;
+					PlayerStatus.increaseheart(-1);
+					PlayerStatus.increaseScore(-PlayerStatus.newScore, 2);
 					Main.gameWindow.switchScreen(new GameScreen());
 				}
 				else {
