@@ -5,7 +5,7 @@ import java.awt.Color;
 import render.Resource;
 
 public class configs {
-	public static final int AllMap = 10;
+	public static final int AllMap = 11;
 	public static final int starPoint = 10;
 	public static int mapGridWidth=12;
 	public static int mapGridHeight=14;
