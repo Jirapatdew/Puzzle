@@ -9,8 +9,11 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import javax.swing.JOptionPane;
-
+import exception.NotAllowedSubstringException;
 import exception.ScoreParsingException;
+import exception.StringTooLongException;
+import exception.TestNotAllowedSubstring;
+import exception.TestStringTooLong;
 import main.Main;
 import ui.StatScreen;
 
@@ -90,28 +93,37 @@ public class HighScoreUtility {
 			}
 		}
 		if(index >= highScoreRecord.length){
-			JOptionPane.showMessageDialog(null, "Game over\n" + "Your score is " + score, "Game over", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(Main.gameWindow, "Game over\n" + "Your score is " + score, "Game over", JOptionPane.INFORMATION_MESSAGE);
 		}else{
 			for(int i=highScoreRecord.length-1; i>=index+1; i--){
 				highScoreRecord[i] = highScoreRecord[i-1];
 			}
-			String name = JOptionPane.showInputDialog(null, "Congratulation, you are ranked " + (index + 1) + "\nPlease enter your name", "High score", JOptionPane.INFORMATION_MESSAGE);
-			
+					
 			/*--------------------------------------------------*/
-			String errorMsg = null;
-			if(name == null) return; //Click Cancel
-			if(name.indexOf(":") != -1) errorMsg = "Wrong format Name (have \":\")";
-			if(name.length() > 10) errorMsg = "Your name too long (more than 10)";
-				
-				//name = name.substring(0, 10);
-				while(errorMsg != null) {
-					name = JOptionPane.showInputDialog(null, errorMsg + "\nPlease enter your name", "High score", JOptionPane.ERROR_MESSAGE);
-					errorMsg = null;
-					if(name == null) return;
-					if(name.indexOf(":") != -1) errorMsg = "Wrong format Name (have \":\")";
-					if(name.length() > 10) errorMsg = "Your name too long (more than 10)";
-				}
+			String name;
+			String msg = "Congratulation, you are ranked " + (index + 1) + "\nPlease enter your name\n(at most 10 characters, not allowed \":\")";
+			boolean isGetInput = false;
+			int messageType = JOptionPane.QUESTION_MESSAGE;
 			
+			do {
+				name = JOptionPane.showInputDialog(Main.gameWindow, msg, "High Score",messageType);	
+				messageType = JOptionPane.ERROR_MESSAGE;
+				
+				if(name == null) return; // Click Cancel
+				
+				isGetInput = true;
+				
+				try {
+					TestNotAllowedSubstring.test(name,":");
+					TestStringTooLong.test(name,10);
+				} catch (NotAllowedSubstringException e) {
+					msg = e.getMessage();
+					isGetInput = false;
+				}catch (StringTooLongException e) {
+					msg = e.getMessage();
+					isGetInput = false;
+				}
+			}while(!isGetInput);
 			
 			/*--------------------------------------------------*/
 			

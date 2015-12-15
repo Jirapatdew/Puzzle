@@ -8,7 +8,11 @@ import javax.swing.JOptionPane;
 
 import config.PlayerStatus;
 import config.configs;
+import exception.NumberOutOfRangeException;
+import exception.TestNumberRange;
+import main.Main;
 import ui.GameScreen;
+import ui.GameWindow;
 
 
 public class CheatUtility implements Runnable {
@@ -52,22 +56,28 @@ public class CheatUtility implements Runnable {
 			String msg = "Please select level (1 - " + configs.AllMap + ")";
 			int level=0;
 			boolean isGetInput = false;
+			int messageType = JOptionPane.QUESTION_MESSAGE;
+			
 			do {
-				String input = JOptionPane.showInputDialog(null, msg, "Go To Level", JOptionPane.QUESTION_MESSAGE);
+				String input = JOptionPane.showInputDialog(Main.gameWindow, msg, "Go To Level",messageType);	
+				messageType = JOptionPane.ERROR_MESSAGE;
+				
+				if(input == null) return; // Click Cancel
+				
 				isGetInput = true;
-				if(input == null) return;
 				try {
 					level = Integer.parseInt(input);
+					TestNumberRange.test(level,1,configs.AllMap);
 				}
-				catch(NumberFormatException e1){
-					msg = "Please enter only numbers";
+				catch (NumberFormatException e) {
+					msg = "Wrong Number format\nPlease enter number again (1 - " + configs.AllMap + ")";
 					isGetInput = false;
 				}
-				if(level < 1 ||level > configs.AllMap) {
-					msg = "Please enter number between 1 to "+configs.AllMap;
+				catch (NumberOutOfRangeException e) {
+					msg = e.getMessage();
 					isGetInput = false;
 				}
- 			}while(!isGetInput);
+			}while(!isGetInput);
 			
 			PlayerStatus.level = level-1;
 			GameScreen.goToNextMap();
@@ -78,22 +88,28 @@ public class CheatUtility implements Runnable {
 			String msg = "Please enter score (0 - 9999999)";
 			int score=0;
 			boolean isGetInput = false;
+			int messageType = JOptionPane.QUESTION_MESSAGE;
+			
 			do {
-				String input = JOptionPane.showInputDialog(null, msg, "Go To Level", JOptionPane.QUESTION_MESSAGE);
+				String input = JOptionPane.showInputDialog(Main.gameWindow, msg, "Set Score",messageType );	
+				messageType = JOptionPane.ERROR_MESSAGE;
+				
+				if(input == null) return; // Click Cancel
+				
 				isGetInput = true;
-				if(input == null) return;
 				try {
 					score = Integer.parseInt(input);
+					TestNumberRange.test(score,0,9999999);
 				}
-				catch(NumberFormatException e1){
-					msg = "Please enter only numbers";
+				catch (NumberFormatException e) {
+					msg = "Wrong Number format\nPlease enter number again (0 - 9999999)";
 					isGetInput = false;
 				}
-				if(score < 0 ||score > 9999999) {
-					msg = "Please enter score between 0 to 9999999";
+				catch (NumberOutOfRangeException e) {
+					msg = e.getMessage();
 					isGetInput = false;
 				}
- 			}while(!isGetInput);
+			}while(!isGetInput);
 			
 			PlayerStatus.increaseScore(score - PlayerStatus.score, 3);
 
