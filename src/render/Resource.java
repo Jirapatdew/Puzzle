@@ -75,6 +75,7 @@ public class Resource {
 	
 	public static final BufferedImage mainScreen = getImage("res/img/MainScreen.png");
 	public static final BufferedImage mainScreen2 = getImage("res/img/MainScreen2.png");
+	public static final BufferedImage howToPlay = getImage("res/img/howtoplay.png");
 	
 	public static final BufferedImage playButton = getImage("res/img/button/play.png");
 	public static final BufferedImage statButton = getImage("res/img/button/stat.png");

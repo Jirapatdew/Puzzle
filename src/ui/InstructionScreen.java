@@ -28,14 +28,15 @@ public class InstructionScreen extends JPanel {
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.setColor(Resource.iBlack);
 		g2d.fillRect(0, 0, 640, 800);
-		g2d.setColor(Resource.iGreen);
-		g2d.fillRect(80, 80, 480, 600);
+//		g2d.setColor(Resource.iGreen);
+//		g2d.fillRect(80, 80, 480, 600);
+		g2d.drawImage(Resource.howToPlay, 80, 80, 480, 600, null);
 		g2d.setColor(Resource.iBlack);
 		g2d.fillRect(500, 670, 40, 40);
 		
-		g2d.drawImage(Resource.box2, 120, 160, 40, 40, null);
-		g2d.drawImage(Resource.box, 120, 240, 40, 40, null);
-		g2d.drawImage(Resource.player, 120, 320, 40, 40, null);
-		g2d.drawImage(Resource.star, 120, 400, 40, 40, null);
+//		g2d.drawImage(Resource.box2, 120, 160, 40, 40, null);
+//		g2d.drawImage(Resource.box, 120, 240, 40, 40, null);
+//		g2d.drawImage(Resource.player, 120, 320, 40, 40, null);
+//		g2d.drawImage(Resource.star, 120, 400, 40, 40, null);
 	}
 }
