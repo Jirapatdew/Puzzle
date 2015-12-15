@@ -3,7 +3,7 @@
   realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="ui.LevelPanel" project="Puzzle" file="/Puzzle/src/ui/LevelPanel.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1135" y="1179"/>    
+    <position height="-1" width="-1" x="1181" y="1505"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="ui.StatusPanel" project="Puzzle" file="/Puzzle/src/ui/StatusPanel.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="485" y="146"/>    
+    <position height="-1" width="-1" x="845" y="2246"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="ui.InstructionScreen" project="Puzzle" 
     file="/Puzzle/src/ui/InstructionScreen.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="703" y="146"/>    
+    <position height="-1" width="-1" x="749" y="2426"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="ui.InfoScreen" project="Puzzle" file="/Puzzle/src/ui/InfoScreen.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="343" y="312"/>    
+    <position height="-1" width="-1" x="763" y="1865"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="ui.MainScreen" project="Puzzle" file="/Puzzle/src/ui/MainScreen.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="241" y="159"/>    
+    <position height="-1" width="-1" x="841" y="2039"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="ui.GameWindow" project="Puzzle" file="/Puzzle/src/ui/GameWindow.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1818" y="1014"/>    
+    <position height="-1" width="-1" x="1924" y="1780"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -138,7 +138,7 @@
   </class>  
   <class id="16" language="java" name="config.configs" project="Puzzle" file="/Puzzle/src/config/configs.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1411" y="415"/>    
+    <position height="-1" width="-1" x="537" y="2161"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -156,7 +156,7 @@
   </class>  
   <class id="18" language="java" name="button.InfoButton" project="Puzzle" file="/Puzzle/src/button/InfoButton.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="875" y="996"/>    
+    <position height="-1" width="-1" x="928" y="1162"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -165,7 +165,7 @@
   </class>  
   <class id="19" language="java" name="button.SoundButton" project="Puzzle" file="/Puzzle/src/button/SoundButton.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1266" y="1005"/>    
+    <position height="-1" width="-1" x="1339" y="1145"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -174,7 +174,7 @@
   </class>  
   <class id="20" language="java" name="button.RoundButton" project="Puzzle" file="/Puzzle/src/button/RoundButton.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="921" y="182"/>    
+    <position height="-1" width="-1" x="985" y="979"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -183,7 +183,7 @@
   </class>  
   <class id="21" language="java" name="button.ControlButton" project="Puzzle" 
     file="/Puzzle/src/button/ControlButton.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="741" y="996"/>    
+    <position height="-1" width="-1" x="761" y="1189"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -192,7 +192,7 @@
   </class>  
   <class id="22" language="java" name="button.StatButton" project="Puzzle" file="/Puzzle/src/button/StatButton.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="606" y="996"/>    
+    <position height="-1" width="-1" x="619" y="1302"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -201,7 +201,7 @@
   </class>  
   <class id="23" language="java" name="button.LikeButton" project="Puzzle" file="/Puzzle/src/button/LikeButton.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="434" y="1005"/>    
+    <position height="-1" width="-1" x="400" y="1124"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -219,7 +219,7 @@
   </class>  
   <class id="25" language="java" name="button.MenuButton" project="Puzzle" file="/Puzzle/src/button/MenuButton.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="259" y="996"/>    
+    <position height="-1" width="-1" x="372" y="1282"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -228,7 +228,7 @@
   </class>  
   <class id="26" language="java" name="button.RefreshButton" project="Puzzle" 
     file="/Puzzle/src/button/RefreshButton.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1048" y="1005"/>    
+    <position height="-1" width="-1" x="1114" y="1151"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -237,7 +237,7 @@
   </class>  
   <class id="27" language="java" name="button.BackButton" project="Puzzle" file="/Puzzle/src/button/BackButton.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="128" y="996"/>    
+    <position height="-1" width="-1" x="714" y="962"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -246,7 +246,7 @@
   </class>  
   <class id="28" language="java" name="exception.NotAllowedSubstringException" project="Puzzle" 
     file="/Puzzle/src/exception/NotAllowedSubstringException.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="573" y="283"/>    
+    <position height="-1" width="-1" x="432" y="1583"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -255,7 +255,7 @@
   </class>  
   <class id="29" language="java" name="exception.ScoreParsingException" project="Puzzle" 
     file="/Puzzle/src/exception/ScoreParsingException.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="369" y="521"/>    
+    <position height="-1" width="-1" x="689" y="1567"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -264,7 +264,7 @@
   </class>  
   <class id="30" language="java" name="exception.TestStringTooLong" project="Puzzle" 
     file="/Puzzle/src/exception/TestStringTooLong.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="523" y="412"/>    
+    <position height="-1" width="-1" x="703" y="1405"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -273,7 +273,7 @@
   </class>  
   <class id="31" language="java" name="exception.TestNotAllowedSubstring" project="Puzzle" 
     file="/Puzzle/src/exception/TestNotAllowedSubstring.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1336" y="1159"/>    
+    <position height="-1" width="-1" x="1162" y="1359"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -282,7 +282,7 @@
   </class>  
   <class id="32" language="java" name="exception.StringTooLongException" project="Puzzle" 
     file="/Puzzle/src/exception/StringTooLongException.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="193" y="463"/>    
+    <position height="-1" width="-1" x="666" y="1736"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -291,7 +291,7 @@
   </class>  
   <class id="33" language="java" name="exception.TestNumberRange" project="Puzzle" 
     file="/Puzzle/src/exception/TestNumberRange.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1201" y="232"/>    
+    <position height="-1" width="-1" x="461" y="1745"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -300,7 +300,7 @@
   </class>  
   <class id="34" language="java" name="exception.NumberOutOfRangeException" project="Puzzle" 
     file="/Puzzle/src/exception/NumberOutOfRangeException.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="242" y="670"/>    
+    <position height="-1" width="-1" x="1002" y="2416"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -309,7 +309,7 @@
   </class>  
   <class id="35" language="java" name="main.Main" project="Puzzle" file="/Puzzle/src/main/Main.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1714" y="191"/>    
+    <position height="-1" width="-1" x="1906" y="1230"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -327,7 +327,7 @@
   </class>  
   <class id="37" language="java" name="render.Resource" project="Puzzle" file="/Puzzle/src/render/Resource.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1924" y="1506"/>    
+    <position height="-1" width="-1" x="257" y="2085"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -372,7 +372,7 @@
   </class>  
   <class id="42" language="java" name="ui.StatScreen" project="Puzzle" file="/Puzzle/src/ui/StatScreen.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1174" y="1366"/>    
+    <position height="-1" width="-1" x="1174" y="1639"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
