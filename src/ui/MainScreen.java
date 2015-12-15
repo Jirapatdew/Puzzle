@@ -26,31 +26,30 @@ import render.Resource;
 public class MainScreen extends JPanel {
 	public MainScreen() {
 		// TODO Auto-generated constructor stub
-		//if(PlayerStatus.enableSound) Resource.s_back.loop();
-		
+
 		setPreferredSize(new Dimension(640, 800));
 		setLayout(null);
 		
 		PlayButton playButton = new PlayButton();
 		add(playButton);
 		//playButton.setLocation(640/2 - playButton.getWidth()/2, 800/2 - playButton.getHeight()/2);
-		playButton.setLocation(230,280);
+		playButton.setLocation(230,330);
 		
 		StatButton statButton = new StatButton();
 		add(statButton);
-		statButton.setLocation(115, 520);
+		statButton.setLocation(115, 570);
 		
 		ControlButton controlButton = new ControlButton();
 		add(controlButton);
-		controlButton.setLocation(225, 520);
+		controlButton.setLocation(225, 570);
 		
 		SoundButton soundButton = new SoundButton();
 		add(soundButton);
-		soundButton.setLocation(335, 520);
+		soundButton.setLocation(335, 570);
 		
 		LikeButton likeButton = new LikeButton();
 		add(likeButton);
-		likeButton.setLocation(445, 520);
+		likeButton.setLocation(445, 570);
 		
 	}
 	
@@ -62,16 +61,18 @@ public class MainScreen extends JPanel {
 		Graphics2D g2d = (Graphics2D)g;
 		
 		g2d.drawImage(Resource.mainScreen2,0,0,640,800,null);
-		g2d.setColor(new Color(0, 0, 0, 200));
+		g2d.setColor(new Color(5, 5, 5, 230));
 		g2d.fillRect(0, 0, 640, 800);
 		
 		g2d.setFont(Resource.largeFont);
 		g2d.setColor(Color.WHITE);
 		
-		String title = "Star King";
-		FontMetrics fm = g2d.getFontMetrics();
-        Rectangle2D r = fm.getStringBounds(title, g2d);
-        int x = (this.getWidth() - (int) r.getWidth()) / 2;
-        g2d.drawString(title, x, 200);
+//		String title = "Star King";
+//		FontMetrics fm = g2d.getFontMetrics();
+//        Rectangle2D r = fm.getStringBounds(title, g2d);
+//        int x = (this.getWidth() - (int) r.getWidth()) / 2;
+//        g2d.drawString(title, x, 200);
+        
+        g2d.drawImage(Resource.logo, 70, 80, 450, 200, null);
 	}
 }

@@ -73,6 +73,7 @@ public class Resource {
 			getImage("res/img/trophies/rank4.png"), getImage("res/img/trophies/rank5.png"),
 			getImage("res/img/trophies/rank6.png"), getImage("res/img/trophies/rank7.png")};
 	
+	public static final BufferedImage logo = getImage("res/img/logo.png");
 	public static final BufferedImage mainScreen = getImage("res/img/MainScreen.png");
 	public static final BufferedImage mainScreen2 = getImage("res/img/MainScreen2.png");
 	public static final BufferedImage howToPlay = getImage("res/img/howtoplay.png");
