@@ -76,7 +76,7 @@ public class Main {
 		//System.out.println(player.lastX+" "+player.lastY+" l");
 		InputUtility.postUpdate();
 		
-		player.update();
+		if(player!=null)player.update();
 		for(IRenderable obj : RenderableHolder.getInstance().getRenderableList()){
 			if(obj instanceof MovableBlock){
 				((MovableBlock)obj).update();
