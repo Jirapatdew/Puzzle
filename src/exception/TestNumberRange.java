@@ -1,7 +1,5 @@
 package exception;
 
-import javax.swing.JOptionPane;
-
 public class TestNumberRange {
 
 	public static void test(int num, int lower, int upper) throws NumberOutOfRangeException {

@@ -1,8 +1,6 @@
 package utility;
 
-
 import java.util.ArrayList;
-
 
 import javax.swing.JOptionPane;
 
@@ -12,8 +10,6 @@ import exception.NumberOutOfRangeException;
 import exception.TestNumberRange;
 import main.Main;
 import ui.GameScreen;
-import ui.GameWindow;
-
 
 public class CheatUtility implements Runnable {
 
@@ -33,25 +29,25 @@ public class CheatUtility implements Runnable {
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		System.out.println("Check Cheat---");
+//		System.out.println("Check Cheat---");
 		if(history == null) return;
 		if(checkCode(CheatCode[0])){
-			System.out.println("NEXTLEVEL");
+//			System.out.println("NEXTLEVEL");
 			
 			GameScreen.goToNextMap();
 		}
 		else if(checkCode(CheatCode[1])){
-			System.out.println("ADDSCORE");
+//			System.out.println("ADDSCORE");
 			
 			PlayerStatus.increaseScore(50, 0);
 		}
 		else if(checkCode(CheatCode[2])){
-			System.out.println("ADDHEART");
+//			System.out.println("ADDHEART");
 			
 			PlayerStatus.increaseheart(5-PlayerStatus.heart);
 		}
 		else if(checkCode(CheatCode[3])){
-			System.out.println("GOTOLEVEL");
+//			System.out.println("GOTOLEVEL");
 			
 			String msg = "Please select level (1 - " + configs.AllMap + ")";
 			int level=0;
@@ -83,7 +79,7 @@ public class CheatUtility implements Runnable {
 			GameScreen.goToNextMap();
 		}
 		else if(checkCode(CheatCode[4])){
-			System.out.println("SETSCORE");
+//			System.out.println("SETSCORE");
 			
 			String msg = "Please enter score (0 - 9999999)";
 			int score=0;
@@ -125,7 +121,7 @@ public class CheatUtility implements Runnable {
 			}
 		}
 
-		System.out.print("Run CheatCode : ");
+//		System.out.print("Run CheatCode : ");
 		return true;
 
 

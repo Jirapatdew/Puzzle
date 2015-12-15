@@ -7,10 +7,8 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.lang.management.ManagementFactory;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import config.PlayerStatus;
@@ -23,18 +21,14 @@ import entity.PointObject;
 import main.Main;
 import render.IRenderable;
 import render.RenderableHolder;
-import render.Resource;
 import utility.CheatUtility;
 import utility.HighScoreUtility;
 import utility.InputUtility;
 import utility.MapUtility;
 
 public class GameScreen extends JPanel{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -8593735507163883962L;
 	
+	private static final long serialVersionUID = 1L;
 	
 	public static Map currentMap;
 	public static int[][] getMapArray(){
@@ -45,9 +39,8 @@ public class GameScreen extends JPanel{
 		super();
 		InputUtility.history = new ArrayList<Integer>();
 		
-		this.currentMap = new Map(PlayerStatus.level,configs.cblack,configs.cpink);
+		currentMap = new Map(PlayerStatus.level,configs.cblack,configs.cpink);
 		RenderableHolder.getInstance().getRenderableList().clear();
-		//MapUtility.printMap(currentMap.mapArray);
 		addAllEntitiesInMap();
 		this.setLayout(new BorderLayout());
 		this.setPreferredSize(new Dimension(configs.screenWidth,configs.screedHeight));
@@ -57,9 +50,6 @@ public class GameScreen extends JPanel{
 		setFocusable(true);
 		requestFocus();
 		///////// Title Panel
-//		JPanel TitlePanel=new JPanel();
-//		TitlePanel.setBackground(configs.cblack);
-//		TitlePanel.setPreferredSize(new Dimension(configs.otherPanelWidth,configs.otherPanelHeight));
 		StatusPanel TitlePanel = new StatusPanel();
 		
 		///////// Center Panel ()
@@ -77,26 +67,19 @@ public class GameScreen extends JPanel{
 		MapEastPanel.setPreferredSize(new Dimension(sideWidth,sideHeight));
 		MapWestPanel.setPreferredSize(new Dimension(sideWidth,sideHeight));
 		CenterPanel.add(MapWestPanel,BorderLayout.WEST);
-		//CenterPanel.add(MapPanel,BorderLayout.CENTER);
 		CenterPanel.add(MapEastPanel,BorderLayout.EAST);
 		
 		///////// Level Panel
-//		JPanel levelPanel=new JPanel();
-//		levelPanel.setBackground(configs.cblack);
-//		levelPanel.setPreferredSize(new Dimension(configs.otherPanelWidth,configs.otherPanelHeight));
 		LevelPanel levelPanel = new LevelPanel();
 		
 		this.add(TitlePanel, BorderLayout.NORTH);
-		//this.add(CenterPanel, BorderLayout.CENTER);
 		this.add(levelPanel, BorderLayout.SOUTH);
 		this.addKeyListener(new KeyListener(){
 
 			@Override
 			public void keyPressed(KeyEvent e) {
 				// TODO Auto-generated method stub
-				//if(InputUtility.getKeyPressed(e.getKeyCode()))
-					//InputUtility.setKeyTriggered(e.getKeyCode(), true);
-				System.out.println(111);
+//				System.out.println(111);
 				if(InputUtility.getKeyPressed(e.getKeyCode())) return;
 				InputUtility.setKeyPressed(e.getKeyCode(), true);
 				InputUtility.setKeyTriggered(e.getKeyCode(), true);
@@ -116,10 +99,10 @@ public class GameScreen extends JPanel{
 					if(InputUtility.history.size()>10) InputUtility.history.remove(0);
 					
 					//Print key history
-					for(int j= 0; j<InputUtility.history.size(); j++){
-						 System.out.printf("%c",InputUtility.history.get(j));
-					 }
-					 System.out.println("");
+//					for(int j= 0; j<InputUtility.history.size(); j++){
+//						 System.out.printf("%c",InputUtility.history.get(j));
+//					 }
+//					 System.out.println("");
 				}
 					
 			}
@@ -167,18 +150,10 @@ public class GameScreen extends JPanel{
 		
 		g2d.fillRect(0, configs.otherPanelHeight, configs.screenWidth, configs.mapHeight);
 		if(currentMap.isVisible()) currentMap.draw(g2d);
-		
-		//System.out.println(RenderableHolder.getInstance().getRenderableList().size());
-		
-		
+				
 		for(IRenderable obj : RenderableHolder.getInstance().getRenderableList()){
 			if(obj.isVisible()){
 				obj.draw(g2d);
-				if(obj instanceof MovableBlock){
-					MovableBlock mvb = (MovableBlock)obj;
-					//System.out.println(mvb.exactX+" "+mvb.exactY);
-					//System.out.println(mvb.lastX+" "+mvb.lastY);
-				}
 			}
 		}
 		
@@ -191,8 +166,6 @@ public class GameScreen extends JPanel{
 			Main.gameWindow.repaint();
 			HighScoreUtility.recordHighScore(PlayerStatus.score);
 			HighScoreUtility.displayTopScore();
-			//Main.gameWindow.switchScreen(new MainScreen());
-			//RenderableHolder.getInstance().getRenderableList().clear();
 			return;
 		}
 		else{

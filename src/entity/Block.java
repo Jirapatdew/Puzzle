@@ -1,7 +1,5 @@
 package entity;
 
-import java.awt.Graphics2D;
-
 public abstract class Block extends Entity{
 	public Block(int x, int y) {
 		super(x, y);

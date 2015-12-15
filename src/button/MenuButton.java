@@ -8,6 +8,9 @@ import render.Resource;
 import ui.MainScreen;
 
 public class MenuButton extends RoundButton {
+
+	private static final long serialVersionUID = 1L;
+
 	public MenuButton() {
 		super(Resource.menuButton);
 		setSize(70, 70);

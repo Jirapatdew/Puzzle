@@ -1,6 +1,5 @@
 package ui;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -11,6 +10,9 @@ import button.BackButton;
 import render.Resource;
 
 public class InfoScreen extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+
 	public InfoScreen() {
 		// TODO Auto-generated constructor stub
 		setPreferredSize(new Dimension(640, 800));

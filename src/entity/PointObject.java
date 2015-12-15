@@ -26,8 +26,6 @@ public class PointObject extends Entity{
 	@Override
 	public void draw(Graphics2D g2d) {
 		// TODO Auto-generated method stub
-		int startX=this.x*configs.singleWidth+configs.mapOffsetX;
-		int startY=this.y*configs.singleHeight+configs.mapOffsetY;
 		g2d.drawImage(Resource.point_object, exactX,exactY,configs.singleWidth,configs.singleHeight,null);
 	}
 

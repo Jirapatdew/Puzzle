@@ -6,7 +6,6 @@ import com.sun.glass.events.KeyEvent;
 import config.PlayerStatus;
 import config.configs;
 import entity.DestructibleBlock;
-import entity.Map;
 import entity.MovableBlock;
 import entity.Player;
 import entity.PointObject;
@@ -15,13 +14,8 @@ import render.RenderableHolder;
 import render.Resource;
 import ui.GameScreen;
 import ui.GameWindow;
-import ui.InstructionScreen;
-import ui.MainScreen;
-import ui.StatScreen;
 import utility.InputUtility;
 import utility.MapUtility;
-
-
 
 public class Main {
 	public static GameWindow gameWindow;
@@ -36,7 +30,6 @@ public class Main {
 			Thread.sleep(20);
 			logicUpdate();
 			gameWindow.repaint();
-			
 		}
 	}
 	public static void logicUpdate(){
@@ -56,24 +49,18 @@ public class Main {
 		
 		//// calculate player final point
 		if(InputUtility.getKeyTriggered(KeyEvent.VK_UP)){
-			player.calculateDestination(configs.NORTH,gamescreen.getMapArray());
+			player.calculateDestination(configs.NORTH,GameScreen.getMapArray());
 		}
 		else if(InputUtility.getKeyTriggered(KeyEvent.VK_DOWN)){
-			player.calculateDestination(configs.SOUTH,gamescreen.getMapArray());
+			player.calculateDestination(configs.SOUTH,GameScreen.getMapArray());
 		}
 		else if(InputUtility.getKeyTriggered(KeyEvent.VK_LEFT)){
-			player.calculateDestination(configs.WEST,gamescreen.getMapArray());
+			player.calculateDestination(configs.WEST,GameScreen.getMapArray());
 		}
 		else if(InputUtility.getKeyTriggered(KeyEvent.VK_RIGHT)){
-			player.calculateDestination(configs.EAST,gamescreen.getMapArray());
+			player.calculateDestination(configs.EAST,GameScreen.getMapArray());
 		}
 		
-		//System.out.println(InputUtility.getKeyTriggered(KeyEvent.VK_UP)+" "+
-		//		InputUtility.getKeyTriggered(KeyEvent.VK_DOWN)+" "+
-		//		InputUtility.getKeyTriggered(KeyEvent.VK_LEFT)+" "+
-		//		InputUtility.getKeyTriggered(KeyEvent.VK_RIGHT)+" ");
-		//System.out.println(player.exactX+" "+player.exactY+" e");
-		//System.out.println(player.lastX+" "+player.lastY+" l");
 		InputUtility.postUpdate();
 		
 		if(player!=null)player.update();
@@ -94,12 +81,11 @@ public class Main {
 					GameScreen.currentMap.mapArray[cur.y+2][cur.x+2]=MapUtility.PASSABLE_TERRAIN;
 					PlayerStatus.increaseScore(configs.starPoint,1);
 					RenderableHolder.getInstance().getRenderableList().remove(obj);
-					if(PlayerStatus.collectedStarThisMap>=gamescreen.currentMap.starCount) gamescreen.goToNextMap();
+					if(PlayerStatus.collectedStarThisMap>=GameScreen.currentMap.starCount) GameScreen.goToNextMap();
 					
 				}
 			}
 		}
-		//RenderableHolder.getInstance().getRenderableList().add(player);
 			
 		
 	}
@@ -111,8 +97,8 @@ public class Main {
 				MovableBlock mvb = (MovableBlock)cur;
 				if(mvb.x==currentX&&mvb.y==currentY){
 					RenderableHolder.getInstance().getRenderableList().remove(cur);
-					gamescreen.currentMap.mapArray[currentY+2][currentX+2]=MapUtility.PLAYER;
-					gamescreen.currentMap.mapArray[lastY+2][lastX+2]=MapUtility.MOVABLE_BLOCK;
+					GameScreen.currentMap.mapArray[currentY+2][currentX+2]=MapUtility.PLAYER;
+					GameScreen.currentMap.mapArray[lastY+2][lastX+2]=MapUtility.MOVABLE_BLOCK;
 					mvb.setNewPlace(lastX,lastY);
 					RenderableHolder.getInstance().getRenderableList().add(mvb);
 				}
@@ -128,7 +114,7 @@ public class Main {
 				if(dtb.x==currentX&&dtb.y==currentY){
 					RenderableHolder.getInstance().getRenderableList().remove(cur);
 					dtb.isDestroyed=true;
-					gamescreen.currentMap.mapArray[currentY+2][currentX+2]=MapUtility.PASSABLE_TERRAIN;
+					GameScreen.currentMap.mapArray[currentY+2][currentX+2]=MapUtility.PASSABLE_TERRAIN;
 					RenderableHolder.getInstance().getRenderableList().add(dtb);
 				}
 			}

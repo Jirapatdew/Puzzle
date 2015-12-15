@@ -4,16 +4,16 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JOptionPane;
-
 import config.PlayerStatus;
 import main.Main;
 import render.Resource;
 import ui.GameScreen;
 import utility.HighScoreUtility;
-import utility.HighScoreUtility.HighScoreRecord;
 
 public class RefreshButton extends RoundButton {
+
+	private static final long serialVersionUID = 1L;
+	
 	public RefreshButton() {
 		super(Resource.refreshButton);
 		
@@ -32,7 +32,7 @@ public class RefreshButton extends RoundButton {
 					Main.gameWindow.switchScreen(new GameScreen());
 				}
 				else {
-					//JOptionPane.showMessageDialog(null, "GAME OVER");
+					//GAME OVER
 					HighScoreUtility.recordHighScore(PlayerStatus.score);
 					HighScoreUtility.displayTopScore();
 				}

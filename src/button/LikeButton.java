@@ -4,15 +4,14 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JOptionPane;
-
 import config.PlayerStatus;
-import entity.Player;
-import main.Main;
 import render.Resource;
-import ui.InfoScreen;
+
 
 public class LikeButton extends RoundButton {
+
+	private static final long serialVersionUID = 1L;
+	
 	public LikeButton() {
 		super(Resource.likeButton);
 		if(PlayerStatus.CheatMode) bimg = Resource.likeButton2;
@@ -25,7 +24,6 @@ public class LikeButton extends RoundButton {
 				// TODO Auto-generated method stub
 				Resource.s_button.play();
 				
-				//Main.gameWindow.switchScreen(new InfoScreen());
 				PlayerStatus.CheatMode = !PlayerStatus.CheatMode;
 				
 				if(PlayerStatus.CheatMode) System.out.println("Cheat Mode is Active");

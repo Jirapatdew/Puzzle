@@ -4,12 +4,13 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JOptionPane;
-
 import config.PlayerStatus;
 import render.Resource;
 
 public class SoundButton extends RoundButton {
+
+	private static final long serialVersionUID = 1L;
+	
 	public SoundButton() {
 		super(Resource.soundButton);
 		if(!PlayerStatus.enableSound) bimg = Resource.muteSoundButton;

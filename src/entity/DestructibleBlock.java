@@ -30,10 +30,6 @@ public class DestructibleBlock extends Block{
 		int startX=this.x*configs.singleWidth+configs.mapOffsetX;
 		int startY=this.y*configs.singleHeight+configs.mapOffsetY;
 		g2d.drawImage(Resource.destructible_block, startX,startY,configs.singleWidth,configs.singleHeight,null);
-		//g2d.fillRect(startX, startY, configs.singleWidth, configs.singleHeight);
-		//g2d.drawImage(Resource.destructible_block, null, startX, startY);
-		//System.out.println(startX+" "+startY);
-		//System.out.println(x+" "+y);
 	}
 
 	@Override

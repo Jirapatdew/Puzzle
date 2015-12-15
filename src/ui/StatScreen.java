@@ -15,6 +15,8 @@ import utility.HighScoreUtility;
 import render.Resource;
 
 public class StatScreen extends JPanel {
+
+	private static final long serialVersionUID = 1L;
 	
 	private HighScoreUtility.HighScoreRecord[] highScoreRecords;
 	

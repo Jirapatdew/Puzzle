@@ -9,10 +9,6 @@ import java.io.InputStream;
 
 import javax.imageio.ImageIO;
 
-import utility.MapUtility;
-
-
-
 public class Resource {
 	
 	public static final Font largeFont = new Font("Century Gothic", Font.PLAIN, 80);

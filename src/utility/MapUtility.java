@@ -1,11 +1,7 @@
 package utility;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.Scanner;
-
-import javax.swing.JOptionPane;
 
 import config.configs;
 import render.Resource;
@@ -49,5 +45,4 @@ public class MapUtility {
 			}System.out.println();
 		}
 	}
-	///Just a Comment Passing by
 }

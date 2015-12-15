@@ -9,10 +9,11 @@ import render.Resource;
 import ui.GameScreen;
 
 public class PlayButton extends RoundButton {
-	
+
+	private static final long serialVersionUID = 1L;
+
 	public PlayButton() {
 		super(Resource.playButton);
-		//setPreferredSize(new Dimension(180, 180));
 		setSize(180, 180);
 		
 		addActionListener(new ActionListener() {

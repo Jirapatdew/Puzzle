@@ -15,6 +15,9 @@ import config.PlayerStatus;
 import render.Resource;
 
 public class StatusPanel extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+	
 	public StatusPanel() {
 		// TODO Auto-generated constructor stub
 		setPreferredSize(new Dimension(640, 160));
@@ -38,7 +41,6 @@ public class StatusPanel extends JPanel{
 		
 		g2d.setFont(Resource.mediumFont);
 		g2d.setColor(Color.WHITE);
-		//g2d.drawString("Score : " + PlayerStatus.score, 220, 70);
 		String text = "Score : " + PlayerStatus.score;
 		FontMetrics fm = g2d.getFontMetrics();
         Rectangle2D r = fm.getStringBounds(text, g2d);

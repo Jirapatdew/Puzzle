@@ -13,6 +13,9 @@ import config.PlayerStatus;
 import render.Resource;
 
 public class LevelPanel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+	
 	public LevelPanel() {
 		// TODO Auto-generated constructor stub
 		setPreferredSize(new Dimension(640, 80));

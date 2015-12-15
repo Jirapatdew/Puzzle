@@ -2,6 +2,7 @@ package exception;
 
 public class ScoreParsingException extends Exception {
 
+	private static final long serialVersionUID = 1L;
 	private int errorType;
 	
 	public ScoreParsingException(int errorType){

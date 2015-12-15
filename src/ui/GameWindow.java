@@ -8,6 +8,10 @@ import render.Resource;
 
 public class GameWindow extends JFrame {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public JPanel currentScene;
 	
 	public GameWindow() {

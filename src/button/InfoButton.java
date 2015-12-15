@@ -3,13 +3,14 @@ package button;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JOptionPane;
-
 import main.Main;
 import render.Resource;
 import ui.InfoScreen;
 
 public class InfoButton extends RoundButton {
+
+	private static final long serialVersionUID = 1L;
+
 	public InfoButton() {
 		super(Resource.infoButton);
 		setSize(80, 80);
