@@ -42,7 +42,7 @@ public class StatScreen extends JPanel {
 			g2d.drawImage(Resource.rank[i], 120, 150 + (70*(i-1)), 45, 45, null);
 		}
 		
-		g2d.setFont(new Font("Century Gothic", Font.BOLD, 36));
+		g2d.setFont(new Font("Century Gothic", Font.PLAIN, 36));
 		g2d.setColor(Color.WHITE);
 		String title = "---- High Score ----";
 		FontMetrics fm = g2d.getFontMetrics();

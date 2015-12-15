@@ -15,6 +15,7 @@ import ui.InfoScreen;
 public class LikeButton extends RoundButton {
 	public LikeButton() {
 		super(Resource.likeButton);
+		if(PlayerStatus.CheatMode) bimg = Resource.likeButton2;
 		setSize(80, 80);
 		
 		addActionListener(new ActionListener() {
